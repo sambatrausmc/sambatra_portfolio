@@ -354,15 +354,49 @@ figcaption {
 
 @media (max-width: 760px) {
   .nav-container,
-  .primary-nav,
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
   }
 
+  .nav-container {
+    align-items: center;
+    flex-flow: row wrap;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    min-height: 44px;
+    margin-left: auto;
+    padding: 8px 12px;
+    color: var(--text);
+    font: inherit;
+    font-weight: 700;
+    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .nav-toggle:hover,
+  .nav-toggle:focus-visible {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
   .primary-nav {
+    display: none;
+    flex-direction: column;
+    flex-basis: 100%;
     width: 100%;
     gap: 4px;
+  }
+
+  .primary-nav.is-open {
+    display: flex;
   }
 
   .primary-nav a {
