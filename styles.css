@@ -252,6 +252,36 @@ figcaption {
   gap: 18px;
 }
 
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-filters button {
+  min-height: 44px;
+  padding: 9px 14px;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.project-filters button:hover,
+.project-filters button:focus-visible {
+  color: var(--text);
+  border-color: var(--gold);
+}
+
+.project-filters button[aria-pressed="true"] {
+  color: var(--background);
+  background-color: var(--gold);
+  border-color: var(--gold);
+}
+
 .project-detail {
   display: grid;
   grid-template-columns: 72px 1fr;
