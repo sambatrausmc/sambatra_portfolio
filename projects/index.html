@@ -37,7 +37,15 @@
         </section>
 
         <section class="section project-list">
-            <article class="project-detail">
+            <div class="project-filters" role="group" aria-label="Filter projects by technology" hidden>
+                <button type="button" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" data-filter="front-end" aria-pressed="false">Front-End</button>
+                <button type="button" data-filter="javascript" aria-pressed="false">JavaScript</button>
+                <button type="button" data-filter="workflow" aria-pressed="false">Workflow</button>
+                <button type="button" data-filter="react" aria-pressed="false">React</button>
+            </div>
+
+            <article class="project-detail" data-category="front-end javascript">
                 <p class="project-number">01</p>
                 <div>
                     <h2>Portfolio Website</h2>
@@ -54,7 +62,7 @@
                 </div>
             </article>
 
-            <article class="project-detail">
+            <article class="project-detail" data-category="workflow">
                 <p class="project-number">02</p>
                 <div>
                     <h2>LISUG Website: Invoice and Billing Record System</h2>
@@ -71,7 +79,7 @@
                 </div>
             </article>
 
-            <article class="project-detail">
+            <article class="project-detail" data-category="front-end javascript workflow react">
                 <p class="project-number">03</p>
                 <div>
                     <h2>LISUG Speaker and Sponsorship Workflow</h2>
