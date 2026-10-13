@@ -169,13 +169,11 @@ p {
   border: 1px solid var(--border);
 }
 
-.hero-media,
-.about-media {
+.hero-media {
   margin: 0;
 }
 
-.hero-media img,
-.about-media img {
+.hero-media img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -254,6 +252,36 @@ figcaption {
   gap: 18px;
 }
 
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-filters button {
+  min-height: 44px;
+  padding: 9px 14px;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.project-filters button:hover,
+.project-filters button:focus-visible {
+  color: var(--text);
+  border-color: var(--gold);
+}
+
+.project-filters button[aria-pressed="true"] {
+  color: var(--background);
+  background-color: var(--gold);
+  border-color: var(--gold);
+}
+
 .project-detail {
   display: grid;
   grid-template-columns: 72px 1fr;
@@ -262,6 +290,10 @@ figcaption {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
+}
+
+.project-detail[hidden] {
+  display: none;
 }
 
 .project-number,
@@ -308,10 +340,7 @@ figcaption {
 }
 
 .about-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
-  align-items: center;
-  gap: 48px;
+  max-width: 850px;
   padding: 88px 0 72px;
 }
 
@@ -354,15 +383,49 @@ figcaption {
 
 @media (max-width: 760px) {
   .nav-container,
-  .primary-nav,
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
   }
 
+  .nav-container {
+    align-items: center;
+    flex-flow: row wrap;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    min-height: 44px;
+    margin-left: auto;
+    padding: 8px 12px;
+    color: var(--text);
+    font: inherit;
+    font-weight: 700;
+    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .nav-toggle:hover,
+  .nav-toggle:focus-visible {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
   .primary-nav {
+    display: none;
+    flex-direction: column;
+    flex-basis: 100%;
     width: 100%;
     gap: 4px;
+  }
+
+  .primary-nav.is-open {
+    display: flex;
   }
 
   .primary-nav a {
@@ -370,7 +433,6 @@ figcaption {
   }
 
   .hero,
-  .about-hero,
   .split-section,
   .project-detail {
     grid-template-columns: 1fr;
