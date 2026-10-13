@@ -35,3 +35,30 @@ if (navToggle && primaryNavigation) {
     }
   });
 }
+
+const projectFilters = document.querySelector(".project-filters");
+const projectCards = document.querySelectorAll(".project-detail");
+
+if (projectFilters && projectCards.length > 0) {
+  const filterButtons = projectFilters.querySelectorAll("button");
+
+  projectFilters.hidden = false;
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedFilter = button.dataset.filter;
+
+      filterButtons.forEach((filterButton) => {
+        const isSelected = filterButton === button;
+        filterButton.setAttribute("aria-pressed", String(isSelected));
+      });
+
+      projectCards.forEach((project) => {
+        const categories = project.dataset.category.split(" ");
+        const shouldShow = selectedFilter === "all" || categories.includes(selectedFilter);
+
+        project.hidden = !shouldShow;
+      });
+    });
+  });
+}

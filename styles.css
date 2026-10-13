@@ -292,6 +292,10 @@ figcaption {
   border-radius: 8px;
 }
 
+.project-detail[hidden] {
+  display: none;
+}
+
 .project-number,
 .timeline-date {
   color: var(--gold);
