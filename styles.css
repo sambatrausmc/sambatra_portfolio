@@ -265,64 +265,75 @@ figcaption {
   font-size: 0.9rem; /* Makes the caption slightly smaller than body text. */
 }
 
+/* Adds consistent spacing and a divider to major page sections. */
 .section {
-  padding: 72px 0;
-  border-top: 1px solid var(--border);
+  padding: 72px 0; /* Adds equal vertical space inside each section. */
+  border-top: 1px solid var(--border); /* Separates sections with the active border color. */
 }
 
+/* Limits the width and spacing of a section's introductory heading group. */
 .section-header {
-  max-width: 720px;
-  margin-bottom: 32px;
+  max-width: 720px; /* Keeps heading and introduction lines readable. */
+  margin-bottom: 32px; /* Separates the heading group from content below it. */
 }
 
+/* Arranges repeated skill or feature cards in three equal columns. */
 .feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  display: grid; /* Uses grid for the repeated card layout. */
+  grid-template-columns: repeat(3, 1fr); /* Creates three columns with equal widths. */
+  gap: 18px; /* Adds consistent space between cards. */
 }
 
+/* Styles each skill or feature card on the Home and Career pages. */
 .feature-card {
-  min-height: 180px;
-  padding: 24px;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  min-height: 180px; /* Keeps cards in the same row visually balanced. */
+  padding: 24px; /* Adds space between card content and its edges. */
+  background-color: var(--surface); /* Uses the active theme's card surface color. */
+  border: 1px solid var(--border); /* Draws a subtle card outline. */
+  border-radius: 8px; /* Rounds the card corners. */
 }
 
+/* Removes extra space below the final paragraph inside feature cards. */
 .feature-card p {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Keeps the card's bottom spacing controlled by its padding. */
 }
 
+/* Splits selected home-page sections into heading and copy columns. */
 .split-section {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
-  gap: 48px;
-  align-items: start;
+  display: grid; /* Uses grid to create the two-column section. */
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr); /* Gives the copy column slightly more room. */
+  gap: 48px; /* Adds space between the two columns. */
+  align-items: start; /* Aligns both columns to the top. */
 }
 
+/* Limits the width of descriptive copy in split sections. */
 .section-copy {
-  max-width: 620px;
+  max-width: 620px; /* Prevents paragraph lines from becoming too long. */
 }
 
+/* Styles inline calls to action such as Explore projects. */
 .text-link {
-  color: var(--gold);
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
+  color: var(--gold); /* Uses the primary accent color. */
+  font-weight: 700; /* Makes the call to action bold. */
+  text-decoration: none; /* Removes the browser's default underline. */
+  border-bottom: 1px solid currentColor; /* Adds a custom underline that matches the text. */
 }
 
+/* Changes text links to the secondary accent when hovered. */
 .text-link:hover {
-  color: var(--teal);
+  color: var(--teal); /* Signals that the link is interactive. */
 }
 
+/* Sizes and spaces the introductory hero on inner pages. */
 .page-hero {
-  max-width: 820px;
-  padding: 88px 0 56px;
+  max-width: 820px; /* Keeps inner-page introductions readable. */
+  padding: 88px 0 56px; /* Adds space above and below the inner-page introduction. */
 }
 
+/* Uses a smaller responsive title size on inner pages and the About hero. */
 .page-hero h1,
 .about-copy h1 {
-  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-size: clamp(2.4rem, 6vw, 5rem); /* Scales long page titles without overpowering their containers. */
 }
 
 .project-list {
