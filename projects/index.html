@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines the page text encoding and makes the layout responsive on mobile devices. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Names the Projects page in the browser tab. -->
     <title>Projects | Sam Batra</title>
+    <!-- Loads the shared styles and JavaScript from the parent folder. -->
     <link rel="stylesheet" href="../styles.css">
     <script src="../script.js" defer></script>
 </head>
 
 <body>
+    <!-- Provides the site identity, page links, mobile menu, and theme control. -->
     <header class="site-header">
         <nav class="nav-container" aria-label="Main navigation">
+            <!-- Returns visitors to the Home page when the name is selected. -->
             <a class="logo" href="../index.html">Sam Batra</a>
 
+            <!-- Opens and closes the navigation links on narrow screens. -->
             <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
                 Menu
             </button>
 
+            <!-- Links to every main page and marks Projects as the current page. -->
             <div class="primary-nav" id="primary-navigation">
                 <a href="../index.html">Home</a>
                 <a class="active" href="index.html" aria-current="page">Projects</a>
@@ -24,13 +31,16 @@
                 <a href="../about/index.html">About</a>
             </div>
 
+            <!-- Switches between the dark and light color themes. -->
             <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
                 <span class="theme-icon" aria-hidden="true">&#9788;</span>
             </button>
         </nav>
     </header>
 
+    <!-- Contains the introduction, filters, and project entries. -->
     <main>
+        <!-- Introduces the kind of work presented on this page. -->
         <section class="page-hero">
             <p class="eyebrow">Projects</p>
             <h1>Web Work, Workflows, and Problem Solving</h1>
@@ -40,7 +50,9 @@
             </p>
         </section>
 
+        <!-- Groups the filter controls and all filterable project entries. -->
         <section class="section project-list">
+            <!-- Lets visitors filter projects by technology when JavaScript is available. -->
             <div class="project-filters reveal-item" role="group" aria-label="Filter projects by technology" hidden>
                 <button type="button" data-filter="all" aria-pressed="true">All</button>
                 <button type="button" data-filter="front-end" aria-pressed="false">Front-End</button>
@@ -49,6 +61,7 @@
                 <button type="button" data-filter="react" aria-pressed="false">React</button>
             </div>
 
+            <!-- Presents the portfolio website project and its expandable details. -->
             <article class="project-detail reveal-item" data-category="front-end javascript">
                 <p class="project-number">01</p>
                 <div>
@@ -64,11 +77,13 @@
                         <li>Responsive Design</li>
                     </ul>
 
+                    <!-- Expands or collapses the portfolio project's additional information. -->
                     <button class="project-details-toggle" type="button" aria-expanded="false" aria-controls="portfolio-project-details">
                         <span class="details-toggle-symbol" aria-hidden="true">+</span>
                         <span class="details-toggle-label">Show details</span>
                     </button>
 
+                    <!-- Holds additional information hidden until the details button is selected. -->
                     <div class="project-extra" id="portfolio-project-details" hidden>
                         <h3>What This Project Demonstrates</h3>
                         <p>
@@ -80,6 +95,7 @@
                 </div>
             </article>
 
+            <!-- Presents the invoice workflow project and its expandable details. -->
             <article class="project-detail reveal-item" data-category="workflow">
                 <p class="project-number">02</p>
                 <div>
@@ -95,11 +111,13 @@
                         <li>Testing</li>
                     </ul>
 
+                    <!-- Expands or collapses the billing project's additional information. -->
                     <button class="project-details-toggle" type="button" aria-expanded="false" aria-controls="billing-project-details">
                         <span class="details-toggle-symbol" aria-hidden="true">+</span>
                         <span class="details-toggle-label">Show details</span>
                     </button>
 
+                    <!-- Holds additional information hidden until the details button is selected. -->
                     <div class="project-extra" id="billing-project-details" hidden>
                         <h3>Workflow Focus</h3>
                         <p>
@@ -111,6 +129,7 @@
                 </div>
             </article>
 
+            <!-- Presents the speaker workflow project and its expandable details. -->
             <article class="project-detail reveal-item" data-category="front-end javascript workflow react">
                 <p class="project-number">03</p>
                 <div>
@@ -128,11 +147,13 @@
                         <li>SendGrid</li>
                     </ul>
 
+                    <!-- Expands or collapses the speaker project's additional information. -->
                     <button class="project-details-toggle" type="button" aria-expanded="false" aria-controls="speaker-project-details">
                         <span class="details-toggle-symbol" aria-hidden="true">+</span>
                         <span class="details-toggle-label">Show details</span>
                     </button>
 
+                    <!-- Holds additional information hidden until the details button is selected. -->
                     <div class="project-extra" id="speaker-project-details" hidden>
                         <h3>What I Learned</h3>
                         <p>
@@ -146,6 +167,7 @@
         </section>
     </main>
 
+    <!-- Shows copyright information and external contact links on every page. -->
     <footer class="site-footer">
         <p>&copy; <time class="current-year" datetime="2026">2026</time> Sam Batra. Built with HTML, CSS, and JavaScript.</p>
         <div class="footer-links">
@@ -154,6 +176,7 @@
         </div>
     </footer>
 
+    <!-- Returns visitors to the top after they have scrolled down the page. -->
     <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>
         <span aria-hidden="true">&#8593;</span>
     </button>
