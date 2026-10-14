@@ -444,7 +444,6 @@ figcaption {
   transition:
     opacity 520ms ease var(--reveal-delay),
     transform 520ms ease var(--reveal-delay);
-  will-change: opacity, transform;
 }
 
 .reveal-item.is-reveal-ready.is-visible {
