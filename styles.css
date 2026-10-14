@@ -641,110 +641,129 @@ figcaption {
   line-height: 1; /* Prevents line spacing from moving the arrow off center. */
 }
 
+/* Changes the layout when the browser is 760px wide or narrower. */
 @media (max-width: 760px) {
+  /* Stacks the navigation container and footer content on small screens. */
   .nav-container,
   .site-footer {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: flex-start; /* Aligns stacked items to the left edge. */
+    flex-direction: column; /* Changes each flex row into a vertical stack. */
   }
 
+  /* Keeps the logo and header controls in a wrapping mobile row. */
   .nav-container {
-    align-items: center;
-    flex-flow: row wrap;
+    align-items: center; /* Vertically aligns the logo and buttons. */
+    flex-flow: row wrap; /* Allows the navigation links to wrap below the controls. */
   }
 
+  /* Displays and styles the Menu button used on small screens. */
   .nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 72px;
-    min-height: 44px;
-    margin-left: 0;
-    padding: 8px 12px;
-    color: var(--text);
-    font: inherit;
-    font-weight: 700;
-    background-color: transparent;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    cursor: pointer;
+    display: inline-flex; /* Makes the normally hidden Menu button visible. */
+    align-items: center; /* Vertically centers the Menu label. */
+    justify-content: center; /* Horizontally centers the Menu label. */
+    min-width: 72px; /* Keeps the button wide enough for Menu and Close. */
+    min-height: 44px; /* Provides an accessible touch target height. */
+    margin-left: 0; /* Removes desktop spacing from the button's left side. */
+    padding: 8px 12px; /* Adds clickable space around the label. */
+    color: var(--text); /* Uses the active theme's main text color. */
+    font: inherit; /* Matches the rest of the site's font settings. */
+    font-weight: 700; /* Makes the Menu label bold. */
+    background-color: transparent; /* Keeps the button background unfilled. */
+    border: 1px solid var(--border); /* Draws a subtle outline around the button. */
+    border-radius: 8px; /* Rounds the button corners. */
+    cursor: pointer; /* Shows that the Menu button can be clicked. */
   }
 
+  /* Highlights the mobile Menu button during mouse or keyboard interaction. */
   .nav-toggle:hover,
   .nav-toggle:focus-visible {
-    color: var(--gold);
-    border-color: var(--gold);
+    color: var(--gold); /* Changes the label to the primary accent. */
+    border-color: var(--gold); /* Changes the outline to the primary accent. */
   }
 
+  /* Hides and prepares the navigation links as a full-width mobile list. */
   .primary-nav {
-    display: none;
-    flex-direction: column;
-    flex-basis: 100%;
-    width: 100%;
-    gap: 4px;
-    order: 4;
-    margin-left: 0;
+    display: none; /* Keeps links hidden until JavaScript opens the menu. */
+    flex-direction: column; /* Stacks navigation links vertically. */
+    flex-basis: 100%; /* Forces the link list onto its own row. */
+    width: 100%; /* Lets each navigation link use the full header width. */
+    gap: 4px; /* Adds a small gap between navigation links. */
+    order: 4; /* Places the link list below all header controls. */
+    margin-left: 0; /* Removes the desktop navigation offset. */
   }
 
+  /* Places the logo first in the mobile header. */
   .logo {
-    order: 1;
+    order: 1; /* Keeps the site identity at the start of the header row. */
   }
 
+  /* Places the theme control between the logo and Menu button. */
   .theme-toggle {
-    order: 2;
-    margin-left: auto;
+    order: 2; /* Positions the theme control second in the header row. */
+    margin-left: auto; /* Pushes both header buttons toward the right. */
   }
 
+  /* Places the Menu button after the theme control. */
   .nav-toggle {
-    order: 3;
+    order: 3; /* Positions the Menu button third in the header row. */
   }
 
+  /* Shows the mobile navigation after JavaScript adds its open class. */
   .primary-nav.is-open {
-    display: flex;
+    display: flex; /* Reveals the prepared vertical navigation list. */
   }
 
+  /* Makes each mobile navigation link fill the available row. */
   .primary-nav a {
-    width: 100%;
+    width: 100%; /* Creates large, consistent link targets. */
   }
 
+  /* Changes multi-column page sections into one-column layouts. */
   .hero,
   .split-section,
   .project-detail {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Places each section's content in one vertical column. */
   }
 
+  /* Reduces Home hero spacing and removes its desktop height requirement. */
   .hero {
-    min-height: auto;
-    padding: 56px 0;
+    min-height: auto; /* Lets hero height follow its content on small screens. */
+    padding: 56px 0; /* Uses more compact vertical hero spacing. */
   }
 
+  /* Stacks the home-page feature cards on small screens. */
   .feature-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Gives every feature card its own row. */
   }
 
+  /* Tightens spacing between a project number and its content. */
   .project-detail {
-    gap: 8px;
+    gap: 8px; /* Reduces the gap in the new one-column project layout. */
   }
 
+  /* Keeps the back-to-top button close to mobile screen edges. */
   .back-to-top {
-    right: 16px;
-    bottom: 16px;
+    right: 16px; /* Positions the button 16px from the right edge. */
+    bottom: 16px; /* Positions the button 16px from the bottom edge. */
   }
 }
 
+/* Honors visitors who ask their device to reduce animation. */
 @media (prefers-reduced-motion: reduce) {
+  /* Removes transitions from major animated interface elements. */
   body,
   .site-header,
   .theme-toggle,
   .details-toggle-symbol,
   .back-to-top {
-    transition: none;
+    transition: none; /* Stops decorative transitions for motion-sensitive visitors. */
   }
 
+  /* Shows reveal items immediately instead of animating them into view. */
   .reveal-item.is-reveal-ready,
   .reveal-item.is-reveal-ready.is-visible {
-    opacity: 1;
-    transform: none;
-    transition: none;
+    opacity: 1; /* Keeps every reveal item fully visible. */
+    transform: none; /* Leaves reveal items in their normal position. */
+    transition: none; /* Removes the scroll-reveal animation. */
   }
 }
