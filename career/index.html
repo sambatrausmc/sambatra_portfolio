@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Defines the page text encoding and makes the layout responsive on mobile devices. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Names the Career page in the browser tab. -->
     <title>Career | Sam Batra</title>
+    <!-- Loads the shared styles and JavaScript from the parent folder. -->
     <link rel="stylesheet" href="../styles.css">
     <script src="../script.js" defer></script>
 </head>
 
 <body>
+    <!-- Provides the site identity, page links, mobile menu, and theme control. -->
     <header class="site-header">
         <nav class="nav-container" aria-label="Main navigation">
+            <!-- Returns visitors to the Home page when the name is selected. -->
             <a class="logo" href="../index.html">Sam Batra</a>
 
+            <!-- Opens and closes the navigation links on narrow screens. -->
             <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
                 Menu
             </button>
 
+            <!-- Links to every main page and marks Career as the current page. -->
             <div class="primary-nav" id="primary-navigation">
                 <a href="../index.html">Home</a>
                 <a href="../projects/index.html">Projects</a>
@@ -24,13 +31,16 @@
                 <a href="../about/index.html">About</a>
             </div>
 
+            <!-- Switches between the dark and light color themes. -->
             <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
                 <span class="theme-icon" aria-hidden="true">&#9788;</span>
             </button>
         </nav>
     </header>
 
+    <!-- Contains the career summary, education, skills, and work history. -->
     <main>
+        <!-- Introduces how Sam's military and technical experience connect. -->
         <section class="page-hero">
             <p class="eyebrow">Career</p>
             <h1>Experience Built Through Service and Technology</h1>
@@ -40,6 +50,7 @@
             </p>
         </section>
 
+        <!-- Presents Sam's degree program and expected graduation date. -->
         <section class="section">
             <div class="section-header reveal-item">
                 <p class="eyebrow">Education</p>
@@ -49,23 +60,28 @@
             </div>
         </section>
 
+        <!-- Summarizes Sam's skills in three scannable groups. -->
         <section class="section">
             <div class="section-header reveal-item">
                 <p class="eyebrow">Skills</p>
                 <h2>Technical Strengths</h2>
             </div>
 
+            <!-- Arranges the skill groups in a responsive card grid. -->
             <div class="feature-grid">
+                <!-- Lists technical support knowledge and practices. -->
                 <article class="feature-card reveal-item">
                     <h3>Technical Support</h3>
                     <p>TCP/IP fundamentals, IP addressing, Windows and macOS troubleshooting, documentation, and escalation.</p>
                 </article>
 
+                <!-- Lists programming tools and development technologies. -->
                 <article class="feature-card reveal-item" data-reveal-delay="1">
                     <h3>Development</h3>
                     <p>HTML, CSS, JavaScript, React, Next.js, REST APIs, MongoDB, AWS S3, SendGrid, Git, and GitHub.</p>
                 </article>
 
+                <!-- Lists security knowledge and leadership strengths. -->
                 <article class="feature-card reveal-item" data-reveal-delay="2">
                     <h3>Security and Leadership</h3>
                     <p>Access control, incident escalation, security-awareness training, workflow testing, and team leadership.</p>
@@ -73,12 +89,14 @@
             </div>
         </section>
 
+        <!-- Presents Sam's professional experience in chronological entries. -->
         <section class="section timeline">
             <div class="section-header reveal-item">
                 <p class="eyebrow">Experience</p>
                 <h2>Career Timeline</h2>
             </div>
 
+            <!-- Describes Sam's software development internship at LISUG. -->
             <article class="timeline-item reveal-item">
                 <p class="timeline-date">January 2026 - August 2026</p>
                 <h3>Long Island Systems User Group</h3>
@@ -93,6 +111,7 @@
                 </p>
             </article>
 
+            <!-- Describes Sam's leadership and security experience in the Marine Corps. -->
             <article class="timeline-item reveal-item">
                 <p class="timeline-date">July 2017 - July 2022</p>
                 <h3>United States Marine Corps</h3>
@@ -110,6 +129,7 @@
         </section>
     </main>
 
+    <!-- Shows copyright information and external contact links on every page. -->
     <footer class="site-footer">
         <p>&copy; <time class="current-year" datetime="2026">2026</time> Sam Batra. Built with HTML, CSS, and JavaScript.</p>
         <div class="footer-links">
@@ -118,6 +138,7 @@
         </div>
     </footer>
 
+    <!-- Returns visitors to the top after they have scrolled down the page. -->
     <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>
         <span aria-hidden="true">&#8593;</span>
     </button>
