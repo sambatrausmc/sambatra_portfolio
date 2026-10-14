@@ -219,33 +219,51 @@ if (revealItems.length > 0 && "IntersectionObserver" in window && !prefersReduce
   });
 }
 
+// Finds the button that lets visitors return to the top of the page.
 const backToTopButton = document.querySelector(".back-to-top");
 
+// Runs the back-to-top feature only when its button exists on the page.
 if (backToTopButton) {
+  // Updates whether the button should be visible at the current scroll position.
   const updateBackToTopButton = () => {
+    // Decides to show the button after the page has moved down 480 pixels.
     const shouldShowButton = window.scrollY > 480;
+    // Adds or removes the CSS class that makes the button visible.
     backToTopButton.classList.toggle("is-visible", shouldShowButton);
   };
 
+  // Removes the HTML fallback hiding once JavaScript can operate the button.
   backToTopButton.hidden = false;
+  // Sets the correct initial visibility in case the page loads while scrolled.
   updateBackToTopButton();
 
+  // Rechecks the button whenever the visitor scrolls the page.
   window.addEventListener("scroll", updateBackToTopButton, { passive: true });
 
+  // Listens for a visitor clicking the back-to-top button.
   backToTopButton.addEventListener("click", () => {
+    // Uses instant movement when reduced motion is preferred and smooth movement otherwise.
     const scrollBehavior = prefersReducedMotion ? "auto" : "smooth";
 
+    // Tells the browser to return to the very top of the document.
     window.scrollTo({
+      // Sets the final vertical scroll position to the top edge.
       top: 0,
+      // Applies the motion setting chosen for this visitor.
       behavior: scrollBehavior,
     });
   });
 }
 
+// Finds every footer time element that should display the current year.
 const currentYearElements = document.querySelectorAll(".current-year");
+// Gets the current year from the visitor's device and converts it to text.
 const currentYear = String(new Date().getFullYear());
 
+// Updates each current-year element found across the site.
 currentYearElements.forEach((yearElement) => {
+  // Replaces the visible fallback year with the current year.
   yearElement.textContent = currentYear;
+  // Updates the machine-readable date value to match the visible year.
   yearElement.setAttribute("datetime", currentYear);
 });
