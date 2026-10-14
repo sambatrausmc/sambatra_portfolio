@@ -223,3 +223,213 @@ The interactions help visitors navigate small screens, choose a comfortable colo
 - Content is limited to a maximum width of 1120 pixels.
 - Repeated spacing values create a consistent rhythm between sections.
 - Paragraph widths are limited to maintain comfortable line lengths.
+
+## Wireframe Design
+
+The following computer-aided text wireframes show the intended information hierarchy. They focus on content placement rather than final colors or exact dimensions.
+
+### Desktop Home Page
+
+```text
++------------------------------------------------------------------+
+| Sam Batra                 Home Projects Career About   [Theme]   |
++------------------------------------------------------------------+
+|                                                                  |
+| PORTFOLIO                           +--------------------------+  |
+| Sam Batra                           |                          |  |
+| Technical Support | Development     |    Professional event    |  |
+| | Security Operations               |          photo           |  |
+|                                     |                          |  |
+| Short professional introduction     +--------------------------+  |
+| [View Projects] [View Career]              Photo caption          |
+|                                                                  |
++------------------------------------------------------------------+
+| FOCUS                                                           |
+| What I Bring                                                    |
+| +----------------+ +----------------+ +----------------------+  |
+| | Tech Support   | | Web Development| | Security Mindset     |  |
+| +----------------+ +----------------+ +----------------------+  |
++------------------------------------------------------------------+
+| Featured Work                       Project summary and link      |
++------------------------------------------------------------------+
+| Background                          Personal summary and link     |
++------------------------------------------------------------------+
+| (c) Sam Batra                         Email | LinkedIn             |
++------------------------------------------------------------------+
+```
+
+### Desktop Projects Page
+
+```text
++------------------------------------------------------------------+
+| Shared navigation and theme control                              |
++------------------------------------------------------------------+
+| PROJECTS                                                         |
+| Web Work, Workflows, and Problem Solving                         |
+| Introductory paragraph                                           |
++------------------------------------------------------------------+
+| [All] [Front-End] [JavaScript] [Workflow] [React]                |
+|                                                                  |
+| +--------------------------------------------------------------+ |
+| | 01  Project title                                            | |
+| |     Project summary                                          | |
+| |     [HTML] [CSS] [JavaScript]                                | |
+| |     (+) Show details                                         | |
+| +--------------------------------------------------------------+ |
+|                                                                  |
+| Additional project entries repeat the same structure             |
++------------------------------------------------------------------+
+| Shared footer                                        [Back top]  |
++------------------------------------------------------------------+
+```
+
+### Mobile Layout
+
+```text
++----------------------------+
+| Sam Batra  [Theme] [Menu]  |
++----------------------------+
+| Navigation appears here    |
+| when Menu is opened        |
++----------------------------+
+| PAGE LABEL                 |
+| Large page heading         |
+| Supporting text            |
+| [Primary] [Secondary]      |
++----------------------------+
+| Image or first content     |
++----------------------------+
+| All grids and split        |
+| sections stack into one    |
+| readable column            |
++----------------------------+
+| Footer links               |
++----------------------------+
+```
+
+## Interaction and Functionality
+
+| Feature | Visitor action | Feedback or result |
+| --- | --- | --- |
+| Mobile navigation | Select Menu or press Escape | Links open or close and the button label changes |
+| Theme toggle | Select the sun or moon button | Colors and icon change, and the preference is saved |
+| Project filters | Select a technology | Nonmatching projects are hidden and the selected filter is highlighted |
+| Project details | Select Show details | Additional information appears and the label changes to Hide details |
+| Scroll reveal | Scroll through a page | Marked content enters with a short transition |
+| Back to top | Scroll down and select the arrow | The page returns to the top |
+| Dynamic year | Load any page | The footer displays the current year |
+
+## Technical Overview
+
+### Architecture
+
+This is a static website with no server, database, package manager, or front-end framework. Each page is an HTML document that loads the same stylesheet and JavaScript file. Relative links allow the project to work locally and under the repository path used by GitHub Pages.
+
+### File Structure
+
+```text
+.
+|-- index.html
+|-- styles.css
+|-- script.js
+|-- README.md
+|-- portfolio_website_plan.md
+|-- about/
+|   `-- index.html
+|-- career/
+|   `-- index.html
+|-- projects/
+|   `-- index.html
+`-- images/
+    |-- sam_batra_lisug_horizons1.webp
+    `-- sam_batra_JayRange.jpeg
+```
+
+### Technologies
+
+- **HTML5:** Semantic page structure, navigation, content, buttons, lists, and accessible attributes
+- **CSS3:** Custom properties, Grid, Flexbox, responsive media queries, themes, and transitions
+- **JavaScript:** DOM selection, event listeners, class updates, browser storage, and intersection observation
+- **Git and GitHub:** Feature branches, focused commits, pull requests, merges, and public source control
+- **GitHub Pages:** Static website hosting from the `main` branch
+
+### Security and Privacy
+
+- The static site does not process accounts, passwords, payments, or private visitor data.
+- The Email link opens the visitor's email program; it does not submit data to this repository.
+- No API keys or private configuration values are stored in the client-side files.
+- External links opened in a new tab use `rel="noopener noreferrer"`.
+- GitHub Pages HTTPS should be enforced when the site is published.
+- A phone number and other unnecessary personal information are intentionally excluded.
+
+## Timeline and Project Milestones
+
+| Milestone | Work completed | Status |
+| --- | --- | --- |
+| Planning | Defined audience, content, visual direction, pages, and learning goals | Complete |
+| Site foundation | Built the Home, Projects, Career, and About pages with shared navigation | Complete |
+| Visual design | Added the color system, typography, layout, project presentation, and responsive rules | Complete |
+| JavaScript | Added filtering, themes, details, reveals, back-to-top behavior, and the dynamic year | Complete |
+| Accessibility | Added semantic structure, alternative text, keyboard states, ARIA attributes, and reduced motion | Complete |
+| Documentation | Added code comments, assignment answers, wireframes, resources, and technical details | Complete |
+| Deployment | Publish the `main` branch through GitHub Pages and perform a final live-site test | Next step |
+
+## Version-Control Workflow
+
+Development follows a branch-based workflow:
+
+1. Keep `main` as the stable public branch.
+2. Keep `dev` locally as the integration starting point.
+3. Create a focused feature, fix, or documentation branch from `dev`.
+4. Make small commits that describe one logical change.
+5. Push the working branch and open a pull request into `main`.
+6. Test the change, merge the pull request, and synchronize local `main` and `dev`.
+7. Delete the completed working branch locally and remotely.
+
+## Running the Website Locally
+
+The HTML files can be opened directly in a browser. A local static server provides behavior closer to GitHub Pages:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit:
+
+```text
+http://localhost:8000
+```
+
+## GitHub Pages Deployment
+
+The assignment requires the website to be hosted with GitHub Pages. The repository already has `index.html` at the root of `main`, so it can be published directly from that branch.
+
+1. Open the repository on GitHub.
+2. Select **Settings**, then **Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select the `main` branch and the `/(root)` folder.
+5. Save the settings and wait for the deployment workflow to finish.
+6. Enable **Enforce HTTPS** when the option becomes available.
+7. Test every page, link, theme, filter, details button, and mobile layout on the live site.
+
+Expected project URL:
+
+```text
+https://sambatrausmc.github.io/sambatra_portfolio/
+```
+
+## External Resources
+
+The website code and written content are original. These references were used to understand browser features, accessibility, version control, and hosting:
+
+- [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+- [Configuring a GitHub Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+- [Securing GitHub Pages with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)
+- [MDN: CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
+- [MDN: CSS Flexible Box Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout)
+- [MDN: Using Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
+- [MDN: Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+- [MDN: Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+- [MDN: prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+
+The Home page photograph is a personal project asset from a Long Island Systems User Group event. The project does not use external UI libraries, templates, stock illustrations, or icon packages.
