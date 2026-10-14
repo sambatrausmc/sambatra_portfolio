@@ -105,75 +105,116 @@ if (navToggle && primaryNavigation) {
   });
 }
 
+// Finds the container that holds all project filter buttons.
 const projectFilters = document.querySelector(".project-filters");
+// Finds every project entry that can be filtered.
 const projectCards = document.querySelectorAll(".project-detail");
 
+// Runs filtering only when the controls and at least one project exist.
 if (projectFilters && projectCards.length > 0) {
+  // Finds each filter button inside the controls.
   const filterButtons = projectFilters.querySelectorAll("button");
 
+  // Reveals the controls now that JavaScript is available to operate them.
   projectFilters.hidden = false;
 
+  // Goes through every project filter button.
   filterButtons.forEach((button) => {
+    // Listens for a click on the current filter button.
     button.addEventListener("click", () => {
+      // Reads the category name stored in the clicked button's data attribute.
       const selectedFilter = button.dataset.filter;
 
+      // Goes through all filter buttons to update their selected states.
       filterButtons.forEach((filterButton) => {
+        // Checks whether this is the button that was just clicked.
         const isSelected = filterButton === button;
+        // Reports the selected or unselected state to CSS and assistive technology.
         filterButton.setAttribute("aria-pressed", String(isSelected));
       });
 
+      // Goes through every project to decide whether it matches the filter.
       projectCards.forEach((project) => {
+        // Turns the project's space-separated category text into a list.
         const categories = project.dataset.category.split(" ");
+        // Shows every project for All or projects that include the selected category.
         const shouldShow = selectedFilter === "all" || categories.includes(selectedFilter);
 
+        // Hides projects that do not match and shows those that do.
         project.hidden = !shouldShow;
       });
     });
   });
 }
 
+// Finds every button that expands a project's additional details.
 const projectDetailButtons = document.querySelectorAll(".project-details-toggle");
 
+// Sets up the expand and collapse behavior for each details button.
 projectDetailButtons.forEach((button) => {
+  // Reads the ID of the details panel controlled by this button.
   const detailsId = button.getAttribute("aria-controls");
+  // Finds that details panel elsewhere in the page.
   const detailsPanel = document.getElementById(detailsId);
+  // Finds the visible Show details or Hide details label in the button.
   const buttonLabel = button.querySelector(".details-toggle-label");
 
+  // Adds behavior only when both the panel and label were found.
   if (detailsPanel && buttonLabel) {
+    // Listens for a visitor clicking this project's details button.
     button.addEventListener("click", () => {
+      // Decides whether this click should open the currently closed panel.
       const willOpen = button.getAttribute("aria-expanded") === "false";
 
+      // Reports the panel's new expanded state to assistive technology.
       button.setAttribute("aria-expanded", String(willOpen));
+      // Shows the panel when opening and hides it when closing.
       detailsPanel.hidden = !willOpen;
+      // Updates the label to describe the button's next action.
       buttonLabel.textContent = willOpen ? "Hide details" : "Show details";
     });
   }
 });
 
+// Finds every page element marked for a scroll-reveal animation.
 const revealItems = document.querySelectorAll(".reveal-item");
+// Checks whether the visitor has requested less animation on their device.
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// Runs scroll reveal when items exist, the browser supports it, and motion is allowed.
 if (revealItems.length > 0 && "IntersectionObserver" in window && !prefersReducedMotion) {
+  // Prepares each reveal item in its hidden starting position.
   revealItems.forEach((item) => {
+    // Adds the CSS class that supplies the starting animation styles.
     item.classList.add("is-reveal-ready");
   });
 
+  // Creates a browser observer that reports when items enter the viewport.
   const revealObserver = new IntersectionObserver(
+    // Receives all visibility changes detected by the observer.
     (entries, observer) => {
+      // Checks each item whose viewport visibility changed.
       entries.forEach((entry) => {
+        // Continues only when the item has entered the visible area.
         if (entry.isIntersecting) {
+          // Adds the class that moves and fades the item into view.
           entry.target.classList.add("is-visible");
+          // Stops watching the item after its one-time reveal.
           observer.unobserve(entry.target);
         }
       });
     },
     {
+      // Triggers the reveal after 15 percent of an item is visible.
       threshold: 0.15,
+      // Moves the bottom trigger upward so reveals begin before the screen edge.
       rootMargin: "0px 0px -40px",
     },
   );
 
+  // Registers every reveal item with the viewport observer.
   revealItems.forEach((item) => {
+    // Starts watching this item for its first entrance into view.
     revealObserver.observe(item);
   });
 }
