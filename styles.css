@@ -1,235 +1,268 @@
+/* Defines the reusable colors and browser theme used by the default dark design. */
 :root {
-  --background: #181a1f;
-  --surface: #242832;
-  --surface-light: #303642;
-  --text: #f4f1ea;
-  --muted: #b8b3aa;
-  --gold: #d6a84f;
-  --teal: #4e9a8e;
-  --border: #3a3f4b;
-  --header-background: rgba(24, 26, 31, 0.94);
-  color-scheme: dark;
+  --background: #181a1f; /* Stores the main page background color. */
+  --surface: #242832; /* Stores the background color for cards and controls. */
+  --surface-light: #303642; /* Stores a lighter surface color for tags. */
+  --text: #f4f1ea; /* Stores the main text color. */
+  --muted: #b8b3aa; /* Stores the softer color used for supporting text. */
+  --gold: #d6a84f; /* Stores the primary accent color. */
+  --teal: #4e9a8e; /* Stores the secondary accent color. */
+  --border: #3a3f4b; /* Stores the color used for outlines and dividers. */
+  --header-background: rgba(24, 26, 31, 0.94); /* Makes the sticky header slightly transparent. */
+  color-scheme: dark; /* Tells the browser that dark controls are preferred. */
 }
 
+/* Replaces the color variables when JavaScript selects the light theme. */
 :root[data-theme="light"] {
-  --background: #f4f6f8;
-  --surface: #ffffff;
-  --surface-light: #e7ebef;
-  --text: #171b20;
-  --muted: #59636d;
-  --gold: #936000;
-  --teal: #24786d;
-  --border: #cbd2d9;
-  --header-background: rgba(244, 246, 248, 0.94);
-  color-scheme: light;
+  --background: #f4f6f8; /* Changes the main page background to a light gray. */
+  --surface: #ffffff; /* Changes cards and controls to white. */
+  --surface-light: #e7ebef; /* Changes tags to a soft gray. */
+  --text: #171b20; /* Changes main text to near-black. */
+  --muted: #59636d; /* Changes supporting text to a readable medium gray. */
+  --gold: #936000; /* Darkens the gold accent for contrast on light backgrounds. */
+  --teal: #24786d; /* Darkens the teal accent for contrast on light backgrounds. */
+  --border: #cbd2d9; /* Changes borders to a light gray. */
+  --header-background: rgba(244, 246, 248, 0.94); /* Gives the light header a translucent background. */
+  color-scheme: light; /* Tells the browser that light controls are preferred. */
 }
 
+/* Makes every element include padding and borders inside its assigned size. */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Prevents padding and borders from increasing element widths. */
 }
 
+/* Sets the shared appearance for the entire visible page. */
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--background);
-  color: var(--text);
-  line-height: 1.6;
-  transition: background-color 180ms ease, color 180ms ease;
+  margin: 0; /* Removes the browser's default space around the page. */
+  font-family: Arial, Helvetica, sans-serif; /* Uses common sans-serif fonts for readable text. */
+  background-color: var(--background); /* Applies the active theme's page background. */
+  color: var(--text); /* Applies the active theme's main text color. */
+  line-height: 1.6; /* Adds comfortable vertical spacing between lines of text. */
+  transition: background-color 180ms ease, color 180ms ease; /* Smooths the visible theme color change. */
 }
 
+/* Keeps every image responsive and removes the small inline-image gap. */
 img {
-  display: block;
-  max-width: 100%;
+  display: block; /* Treats images as block elements. */
+  max-width: 100%; /* Stops images from growing wider than their containers. */
 }
 
+/* Makes links use the text color supplied by their surrounding section. */
 a {
-  color: inherit;
+  color: inherit; /* Inherits the parent's current text color. */
 }
 
+/* Styles the header that stays at the top while the visitor scrolls. */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background-color: var(--header-background);
-  border-bottom: 1px solid var(--border);
-  transition: background-color 180ms ease, border-color 180ms ease;
+  position: sticky; /* Keeps the header attached to the viewport during scrolling. */
+  top: 0; /* Anchors the sticky header to the top edge. */
+  z-index: 10; /* Places the header above normal page content. */
+  background-color: var(--header-background); /* Applies the active translucent header color. */
+  border-bottom: 1px solid var(--border); /* Separates the header from the page with a thin line. */
+  transition: background-color 180ms ease, border-color 180ms ease; /* Smooths header colors during theme changes. */
 }
 
+/* Arranges the logo, navigation links, and header controls in one centered row. */
 .nav-container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  max-width: 1120px; /* Limits the navigation content to the site's maximum width. */
+  margin: 0 auto; /* Centers the navigation container horizontally. */
+  padding: 18px 24px; /* Adds space inside the header around its controls. */
+  display: flex; /* Places the navigation children in a flexible row. */
+  align-items: center; /* Vertically centers the navigation children. */
+  justify-content: space-between; /* Distributes available space between header groups. */
+  gap: 24px; /* Keeps consistent space between header children. */
 }
 
+/* Styles the Sam Batra name link at the left side of the header. */
 .logo {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0;
+  color: var(--text); /* Uses the active theme's main text color. */
+  text-decoration: none; /* Removes the default link underline. */
+  font-weight: 700; /* Makes the logo text bold. */
+  letter-spacing: 0; /* Keeps normal spacing between logo letters. */
 }
 
+/* Arranges the desktop page links in a horizontal row. */
 .primary-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-left: auto;
+  display: flex; /* Places the page links next to one another. */
+  align-items: center; /* Vertically centers the page links. */
+  gap: 8px; /* Adds space between individual links. */
+  margin-left: auto; /* Pushes the navigation links toward the right. */
 }
 
+/* Styles each Home, Projects, Career, and About navigation link. */
 .primary-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 700;
-  padding: 8px 12px;
-  border-radius: 8px;
+  color: var(--muted); /* Uses a quieter color for inactive links. */
+  text-decoration: none; /* Removes default link underlines. */
+  font-size: 0.95rem; /* Makes navigation text slightly smaller than body text. */
+  font-weight: 700; /* Makes navigation labels bold. */
+  padding: 8px 12px; /* Creates a larger clickable area around each label. */
+  border-radius: 8px; /* Rounds the highlighted link corners. */
 }
 
+/* Highlights a navigation link when it is hovered or represents the current page. */
 .primary-nav a:hover,
 .primary-nav a.active {
-  color: var(--background);
-  background-color: var(--gold);
+  color: var(--background); /* Uses the page background color for highlighted link text. */
+  background-color: var(--gold); /* Fills the highlighted link with the gold accent. */
 }
 
+/* Hides the mobile Menu button on wider screens. */
 .nav-toggle {
-  display: none;
+  display: none; /* Removes the Menu button from the desktop layout. */
 }
 
+/* Styles the square light-and-dark theme button in the header. */
 .theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 44px;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  color: var(--text);
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  display: inline-flex; /* Allows the theme icon to be centered with flexbox. */
+  align-items: center; /* Centers the icon vertically. */
+  justify-content: center; /* Centers the icon horizontally. */
+  flex: 0 0 44px; /* Prevents the control from growing or shrinking. */
+  width: 44px; /* Gives the control an accessible fixed width. */
+  height: 44px; /* Gives the control an accessible fixed height. */
+  padding: 0; /* Removes unnecessary space around the centered icon. */
+  color: var(--text); /* Uses the active theme's main text color for the icon. */
+  background-color: var(--surface); /* Places the icon on the active surface color. */
+  border: 1px solid var(--border); /* Draws a subtle outline around the control. */
+  border-radius: 8px; /* Rounds the control's corners. */
+  cursor: pointer; /* Shows that the control can be clicked. */
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease; /* Smooths its color changes. */
 }
 
+/* Emphasizes the theme button for mouse and keyboard users. */
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
-  color: var(--gold);
-  border-color: var(--gold);
+  color: var(--gold); /* Changes the icon to gold. */
+  border-color: var(--gold); /* Changes the outline to gold. */
 }
 
+/* Sizes the sun or moon character inside the theme button. */
 .theme-icon {
-  font-size: 1.35rem;
-  line-height: 1;
+  font-size: 1.35rem; /* Makes the icon large enough to recognize. */
+  line-height: 1; /* Prevents extra line spacing from moving the icon. */
 }
 
+/* Constrains and centers the main content shared by every page. */
 main {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 24px;
+  max-width: 1120px; /* Prevents page content from becoming too wide. */
+  margin: 0 auto; /* Centers the main content horizontally. */
+  padding: 0 24px; /* Keeps content away from the viewport edges. */
 }
 
+/* Creates the home-page introduction with text and an image in two columns. */
 .hero {
-  min-height: calc(100vh - 73px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-  align-items: center;
-  gap: 48px;
-  padding: 72px 0;
+  min-height: calc(100vh - 73px); /* Fills the first screen minus the header height. */
+  display: grid; /* Uses grid to arrange the text and image. */
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr); /* Gives the text slightly more room than the image. */
+  align-items: center; /* Vertically centers both hero columns. */
+  gap: 48px; /* Adds space between the text and image. */
+  padding: 72px 0; /* Adds vertical breathing room inside the hero. */
 }
 
+/* Limits the width of the written introduction in the hero. */
 .hero-content {
-  max-width: 680px;
+  max-width: 680px; /* Keeps long lines of hero text readable. */
 }
 
+/* Styles small uppercase labels such as Portfolio, Focus, and Background. */
 .eyebrow {
-  margin: 0 0 12px;
-  color: var(--gold);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  margin: 0 0 12px; /* Removes top space and separates the label from its heading. */
+  color: var(--gold); /* Uses the primary accent color. */
+  font-size: 0.78rem; /* Keeps the label smaller than nearby headings. */
+  font-weight: 700; /* Makes the label bold. */
+  text-transform: uppercase; /* Displays the label in capital letters. */
 }
 
+/* Removes unwanted browser spacing above headings and paragraphs. */
 h1,
 h2,
 h3,
 p {
-  margin-top: 0;
+  margin-top: 0; /* Aligns text blocks cleanly with their containers. */
 }
 
+/* Styles the largest page heading, including the Sam Batra hero title. */
 h1 {
-  margin-bottom: 16px;
-  font-size: clamp(2.8rem, 8vw, 6.5rem);
-  line-height: 0.95;
+  margin-bottom: 16px; /* Adds space below the main heading. */
+  font-size: clamp(2.8rem, 8vw, 6.5rem); /* Scales the heading between safe minimum and maximum sizes. */
+  line-height: 0.95; /* Keeps large heading lines visually close together. */
 }
 
+/* Styles second-level section headings. */
 h2 {
-  margin-bottom: 16px;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1;
+  margin-bottom: 16px; /* Adds space below each section heading. */
+  font-size: clamp(2rem, 4vw, 3.5rem); /* Scales section headings responsively. */
+  line-height: 1; /* Keeps multi-line section headings compact. */
 }
 
+/* Styles smaller headings used inside cards and details. */
 h3 {
-  margin-bottom: 10px;
-  font-size: 1.15rem;
+  margin-bottom: 10px; /* Separates each small heading from its text. */
+  font-size: 1.15rem; /* Makes small headings slightly larger than body text. */
 }
 
+/* Applies the softer text color to normal paragraphs. */
 p {
-  color: var(--muted);
+  color: var(--muted); /* Distinguishes supporting copy from headings. */
 }
 
+/* Emphasizes the professional identity line under the home-page name. */
 .hero-subtitle {
-  color: var(--text);
-  font-size: clamp(1.15rem, 3vw, 1.6rem);
-  font-weight: 700;
+  color: var(--text); /* Uses the stronger main text color. */
+  font-size: clamp(1.15rem, 3vw, 1.6rem); /* Scales the subtitle for different screens. */
+  font-weight: 700; /* Makes the professional identity line bold. */
 }
 
+/* Arranges the View Projects and View Career actions. */
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 28px;
+  display: flex; /* Places action links in a row. */
+  flex-wrap: wrap; /* Moves actions to a new line when space is limited. */
+  gap: 14px; /* Adds space between the action links. */
+  margin-top: 28px; /* Separates actions from the introduction text. */
 }
 
+/* Supplies shared button-like styling to hero action links. */
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
+  display: inline-flex; /* Allows label centering while keeping link-sized width. */
+  align-items: center; /* Vertically centers the button label. */
+  justify-content: center; /* Horizontally centers the button label. */
+  min-height: 44px; /* Provides an accessible minimum touch target height. */
+  padding: 10px 18px; /* Adds space around the button label. */
+  border-radius: 8px; /* Rounds the button corners. */
+  text-decoration: none; /* Removes the default link underline. */
+  font-weight: 700; /* Makes the button label bold. */
 }
 
+/* Gives the primary hero action a solid gold appearance. */
 .primary-button {
-  color: var(--background);
-  background-color: var(--gold);
+  color: var(--background); /* Uses the page background color for contrasting text. */
+  background-color: var(--gold); /* Fills the primary action with gold. */
 }
 
+/* Gives the secondary hero action a quieter outlined appearance. */
 .secondary-button {
-  color: var(--text);
-  border: 1px solid var(--border);
+  color: var(--text); /* Uses the main text color for its label. */
+  border: 1px solid var(--border); /* Draws a subtle outline around the action. */
 }
 
+/* Removes the browser's default margin from the hero image figure. */
 .hero-media {
-  margin: 0;
+  margin: 0; /* Aligns the figure with the hero grid. */
 }
 
+/* Sizes and crops the featured home-page photograph. */
 .hero-media img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  width: 100%; /* Makes the image fill its grid column. */
+  aspect-ratio: 4 / 3; /* Keeps the image in a consistent landscape shape. */
+  object-fit: cover; /* Crops the image without stretching it. */
+  border-radius: 8px; /* Rounds the image corners. */
+  border: 1px solid var(--border); /* Adds a subtle outline around the image. */
 }
 
+/* Styles the short description below the hero image. */
 figcaption {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 0.9rem;
+  margin-top: 10px; /* Adds space between the image and caption. */
+  color: var(--muted); /* Uses the softer supporting-text color. */
+  font-size: 0.9rem; /* Makes the caption slightly smaller than body text. */
 }
 
 .section {
