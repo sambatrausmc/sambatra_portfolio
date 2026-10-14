@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Defines the page text encoding and makes the layout responsive on mobile devices. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Names the About page in the browser tab. -->
     <title>About | Sam Batra</title>
-    <!-- Loads the shared styles and JavaScript from the parent folder. -->
     <link rel="stylesheet" href="../styles.css">
     <script src="../script.js" defer></script>
 </head>
 
 <body>
-    <!-- Provides the site identity, page links, mobile menu, and theme control. -->
     <header class="site-header">
         <nav class="nav-container" aria-label="Main navigation">
-            <!-- Returns visitors to the Home page when the name is selected. -->
             <a class="logo" href="../index.html">Sam Batra</a>
 
-            <!-- Opens and closes the navigation links on narrow screens. -->
             <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
                 Menu
             </button>
 
-            <!-- Links to every main page and marks About as the current page. -->
             <div class="primary-nav" id="primary-navigation">
                 <a href="../index.html">Home</a>
                 <a href="../projects/index.html">Projects</a>
@@ -31,16 +24,13 @@
                 <a class="active" href="index.html" aria-current="page">About</a>
             </div>
 
-            <!-- Switches between the dark and light color themes. -->
             <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
                 <span class="theme-icon" aria-hidden="true">&#9788;</span>
             </button>
         </nav>
     </header>
 
-    <!-- Contains the About page introduction and personal story. -->
     <main>
-        <!-- Introduces Sam's practical transition from military service into technology. -->
         <section class="about-hero">
             <div class="about-copy">
                 <p class="eyebrow">About Me</p>
@@ -53,9 +43,7 @@
             </div>
         </section>
 
-        <!-- Tells Sam's story through military service, college, and LISUG experience. -->
         <section class="section story-section">
-            <!-- Explains the military experience that shaped Sam's approach to technology. -->
             <p class="reveal-item">
                 My professional journey began in the United States Marine Corps, where I served from
                 2017 to 2022 in security forces, infantry leadership, and combat marksmanship instruction.
@@ -64,7 +52,6 @@
                 physical-security systems.
             </p>
 
-            <!-- Explains Sam's transition into his college technology program. -->
             <p class="reveal-item">
                 After completing my military service, I carried that same sense of purpose into Farmingdale
                 State College, where I am pursuing a Bachelor of Science in Computer Programming and
@@ -72,7 +59,6 @@
                 problem-solving experience into technical capability.
             </p>
 
-            <!-- Explains Sam's software development and community work at LISUG. -->
             <p class="reveal-item">
                 That journey led me to the Long Island Systems User Group, where I advanced from Software
                 Development Intern to Board Member. At LISUG, I have helped turn speaker, sponsorship,
@@ -82,7 +68,6 @@
         </section>
     </main>
 
-    <!-- Shows copyright information and external contact links on every page. -->
     <footer class="site-footer">
         <p>&copy; <time class="current-year" datetime="2026">2026</time> Sam Batra. Built with HTML, CSS, and JavaScript.</p>
         <div class="footer-links">
@@ -91,7 +76,6 @@
         </div>
     </footer>
 
-    <!-- Returns visitors to the top after they have scrolled down the page. -->
     <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>
         <span aria-hidden="true">&#8593;</span>
     </button>

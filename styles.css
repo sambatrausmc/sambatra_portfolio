@@ -1,769 +1,666 @@
-/* Defines the reusable colors and browser theme used by the default dark design. */
 :root {
-  --background: #181a1f; /* Stores the main page background color. */
-  --surface: #242832; /* Stores the background color for cards and controls. */
-  --surface-light: #303642; /* Stores a lighter surface color for tags. */
-  --text: #f4f1ea; /* Stores the main text color. */
-  --muted: #b8b3aa; /* Stores the softer color used for supporting text. */
-  --gold: #d6a84f; /* Stores the primary accent color. */
-  --teal: #4e9a8e; /* Stores the secondary accent color. */
-  --border: #3a3f4b; /* Stores the color used for outlines and dividers. */
-  --header-background: rgba(24, 26, 31, 0.94); /* Makes the sticky header slightly transparent. */
-  color-scheme: dark; /* Tells the browser that dark controls are preferred. */
+  --background: #181a1f;
+  --surface: #242832;
+  --surface-light: #303642;
+  --text: #f4f1ea;
+  --muted: #b8b3aa;
+  --gold: #d6a84f;
+  --teal: #4e9a8e;
+  --border: #3a3f4b;
+  --header-background: rgba(24, 26, 31, 0.94);
+  color-scheme: dark;
 }
 
-/* Replaces the color variables when JavaScript selects the light theme. */
 :root[data-theme="light"] {
-  --background: #f4f6f8; /* Changes the main page background to a light gray. */
-  --surface: #ffffff; /* Changes cards and controls to white. */
-  --surface-light: #e7ebef; /* Changes tags to a soft gray. */
-  --text: #171b20; /* Changes main text to near-black. */
-  --muted: #59636d; /* Changes supporting text to a readable medium gray. */
-  --gold: #936000; /* Darkens the gold accent for contrast on light backgrounds. */
-  --teal: #24786d; /* Darkens the teal accent for contrast on light backgrounds. */
-  --border: #cbd2d9; /* Changes borders to a light gray. */
-  --header-background: rgba(244, 246, 248, 0.94); /* Gives the light header a translucent background. */
-  color-scheme: light; /* Tells the browser that light controls are preferred. */
+  --background: #f4f6f8;
+  --surface: #ffffff;
+  --surface-light: #e7ebef;
+  --text: #171b20;
+  --muted: #59636d;
+  --gold: #936000;
+  --teal: #24786d;
+  --border: #cbd2d9;
+  --header-background: rgba(244, 246, 248, 0.94);
+  color-scheme: light;
 }
 
-/* Makes every element include padding and borders inside its assigned size. */
 * {
-  box-sizing: border-box; /* Prevents padding and borders from increasing element widths. */
+  box-sizing: border-box;
 }
 
-/* Sets the shared appearance for the entire visible page. */
 body {
-  margin: 0; /* Removes the browser's default space around the page. */
-  font-family: Arial, Helvetica, sans-serif; /* Uses common sans-serif fonts for readable text. */
-  background-color: var(--background); /* Applies the active theme's page background. */
-  color: var(--text); /* Applies the active theme's main text color. */
-  line-height: 1.6; /* Adds comfortable vertical spacing between lines of text. */
-  transition: background-color 180ms ease, color 180ms ease; /* Smooths the visible theme color change. */
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 180ms ease, color 180ms ease;
 }
 
-/* Keeps every image responsive and removes the small inline-image gap. */
 img {
-  display: block; /* Treats images as block elements. */
-  max-width: 100%; /* Stops images from growing wider than their containers. */
+  display: block;
+  max-width: 100%;
 }
 
-/* Makes links use the text color supplied by their surrounding section. */
 a {
-  color: inherit; /* Inherits the parent's current text color. */
+  color: inherit;
 }
 
-/* Styles the header that stays at the top while the visitor scrolls. */
 .site-header {
-  position: sticky; /* Keeps the header attached to the viewport during scrolling. */
-  top: 0; /* Anchors the sticky header to the top edge. */
-  z-index: 10; /* Places the header above normal page content. */
-  background-color: var(--header-background); /* Applies the active translucent header color. */
-  border-bottom: 1px solid var(--border); /* Separates the header from the page with a thin line. */
-  transition: background-color 180ms ease, border-color 180ms ease; /* Smooths header colors during theme changes. */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--header-background);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 
-/* Arranges the logo, navigation links, and header controls in one centered row. */
 .nav-container {
-  max-width: 1120px; /* Limits the navigation content to the site's maximum width. */
-  margin: 0 auto; /* Centers the navigation container horizontally. */
-  padding: 18px 24px; /* Adds space inside the header around its controls. */
-  display: flex; /* Places the navigation children in a flexible row. */
-  align-items: center; /* Vertically centers the navigation children. */
-  justify-content: space-between; /* Distributes available space between header groups. */
-  gap: 24px; /* Keeps consistent space between header children. */
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-/* Styles the Sam Batra name link at the left side of the header. */
 .logo {
-  color: var(--text); /* Uses the active theme's main text color. */
-  text-decoration: none; /* Removes the default link underline. */
-  font-weight: 700; /* Makes the logo text bold. */
-  letter-spacing: 0; /* Keeps normal spacing between logo letters. */
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 
-/* Arranges the desktop page links in a horizontal row. */
 .primary-nav {
-  display: flex; /* Places the page links next to one another. */
-  align-items: center; /* Vertically centers the page links. */
-  gap: 8px; /* Adds space between individual links. */
-  margin-left: auto; /* Pushes the navigation links toward the right. */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
 }
 
-/* Styles each Home, Projects, Career, and About navigation link. */
 .primary-nav a {
-  color: var(--muted); /* Uses a quieter color for inactive links. */
-  text-decoration: none; /* Removes default link underlines. */
-  font-size: 0.95rem; /* Makes navigation text slightly smaller than body text. */
-  font-weight: 700; /* Makes navigation labels bold. */
-  padding: 8px 12px; /* Creates a larger clickable area around each label. */
-  border-radius: 8px; /* Rounds the highlighted link corners. */
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
-/* Highlights a navigation link when it is hovered or represents the current page. */
 .primary-nav a:hover,
 .primary-nav a.active {
-  color: var(--background); /* Uses the page background color for highlighted link text. */
-  background-color: var(--gold); /* Fills the highlighted link with the gold accent. */
+  color: var(--background);
+  background-color: var(--gold);
 }
 
-/* Hides the mobile Menu button on wider screens. */
 .nav-toggle {
-  display: none; /* Removes the Menu button from the desktop layout. */
+  display: none;
 }
 
-/* Styles the square light-and-dark theme button in the header. */
 .theme-toggle {
-  display: inline-flex; /* Allows the theme icon to be centered with flexbox. */
-  align-items: center; /* Centers the icon vertically. */
-  justify-content: center; /* Centers the icon horizontally. */
-  flex: 0 0 44px; /* Prevents the control from growing or shrinking. */
-  width: 44px; /* Gives the control an accessible fixed width. */
-  height: 44px; /* Gives the control an accessible fixed height. */
-  padding: 0; /* Removes unnecessary space around the centered icon. */
-  color: var(--text); /* Uses the active theme's main text color for the icon. */
-  background-color: var(--surface); /* Places the icon on the active surface color. */
-  border: 1px solid var(--border); /* Draws a subtle outline around the control. */
-  border-radius: 8px; /* Rounds the control's corners. */
-  cursor: pointer; /* Shows that the control can be clicked. */
-  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease; /* Smooths its color changes. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
-/* Emphasizes the theme button for mouse and keyboard users. */
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
-  color: var(--gold); /* Changes the icon to gold. */
-  border-color: var(--gold); /* Changes the outline to gold. */
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
-/* Sizes the sun or moon character inside the theme button. */
 .theme-icon {
-  font-size: 1.35rem; /* Makes the icon large enough to recognize. */
-  line-height: 1; /* Prevents extra line spacing from moving the icon. */
+  font-size: 1.35rem;
+  line-height: 1;
 }
 
-/* Constrains and centers the main content shared by every page. */
 main {
-  max-width: 1120px; /* Prevents page content from becoming too wide. */
-  margin: 0 auto; /* Centers the main content horizontally. */
-  padding: 0 24px; /* Keeps content away from the viewport edges. */
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* Creates the home-page introduction with text and an image in two columns. */
 .hero {
-  min-height: calc(100vh - 73px); /* Fills the first screen minus the header height. */
-  display: grid; /* Uses grid to arrange the text and image. */
-  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr); /* Gives the text slightly more room than the image. */
-  align-items: center; /* Vertically centers both hero columns. */
-  gap: 48px; /* Adds space between the text and image. */
-  padding: 72px 0; /* Adds vertical breathing room inside the hero. */
+  min-height: calc(100vh - 73px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  align-items: center;
+  gap: 48px;
+  padding: 72px 0;
 }
 
-/* Limits the width of the written introduction in the hero. */
 .hero-content {
-  max-width: 680px; /* Keeps long lines of hero text readable. */
+  max-width: 680px;
 }
 
-/* Styles small uppercase labels such as Portfolio, Focus, and Background. */
 .eyebrow {
-  margin: 0 0 12px; /* Removes top space and separates the label from its heading. */
-  color: var(--gold); /* Uses the primary accent color. */
-  font-size: 0.78rem; /* Keeps the label smaller than nearby headings. */
-  font-weight: 700; /* Makes the label bold. */
-  text-transform: uppercase; /* Displays the label in capital letters. */
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-/* Removes unwanted browser spacing above headings and paragraphs. */
 h1,
 h2,
 h3,
 p {
-  margin-top: 0; /* Aligns text blocks cleanly with their containers. */
+  margin-top: 0;
 }
 
-/* Styles the largest page heading, including the Sam Batra hero title. */
 h1 {
-  margin-bottom: 16px; /* Adds space below the main heading. */
-  font-size: clamp(2.8rem, 8vw, 6.5rem); /* Scales the heading between safe minimum and maximum sizes. */
-  line-height: 0.95; /* Keeps large heading lines visually close together. */
+  margin-bottom: 16px;
+  font-size: clamp(2.8rem, 8vw, 6.5rem);
+  line-height: 0.95;
 }
 
-/* Styles second-level section headings. */
 h2 {
-  margin-bottom: 16px; /* Adds space below each section heading. */
-  font-size: clamp(2rem, 4vw, 3.5rem); /* Scales section headings responsively. */
-  line-height: 1; /* Keeps multi-line section headings compact. */
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
 }
 
-/* Styles smaller headings used inside cards and details. */
 h3 {
-  margin-bottom: 10px; /* Separates each small heading from its text. */
-  font-size: 1.15rem; /* Makes small headings slightly larger than body text. */
+  margin-bottom: 10px;
+  font-size: 1.15rem;
 }
 
-/* Applies the softer text color to normal paragraphs. */
 p {
-  color: var(--muted); /* Distinguishes supporting copy from headings. */
+  color: var(--muted);
 }
 
-/* Emphasizes the professional identity line under the home-page name. */
 .hero-subtitle {
-  color: var(--text); /* Uses the stronger main text color. */
-  font-size: clamp(1.15rem, 3vw, 1.6rem); /* Scales the subtitle for different screens. */
-  font-weight: 700; /* Makes the professional identity line bold. */
+  color: var(--text);
+  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  font-weight: 700;
 }
 
-/* Arranges the View Projects and View Career actions. */
 .hero-actions {
-  display: flex; /* Places action links in a row. */
-  flex-wrap: wrap; /* Moves actions to a new line when space is limited. */
-  gap: 14px; /* Adds space between the action links. */
-  margin-top: 28px; /* Separates actions from the introduction text. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
 }
 
-/* Supplies shared button-like styling to hero action links. */
 .button {
-  display: inline-flex; /* Allows label centering while keeping link-sized width. */
-  align-items: center; /* Vertically centers the button label. */
-  justify-content: center; /* Horizontally centers the button label. */
-  min-height: 44px; /* Provides an accessible minimum touch target height. */
-  padding: 10px 18px; /* Adds space around the button label. */
-  border-radius: 8px; /* Rounds the button corners. */
-  text-decoration: none; /* Removes the default link underline. */
-  font-weight: 700; /* Makes the button label bold. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
 }
 
-/* Gives the primary hero action a solid gold appearance. */
 .primary-button {
-  color: var(--background); /* Uses the page background color for contrasting text. */
-  background-color: var(--gold); /* Fills the primary action with gold. */
+  color: var(--background);
+  background-color: var(--gold);
 }
 
-/* Gives the secondary hero action a quieter outlined appearance. */
 .secondary-button {
-  color: var(--text); /* Uses the main text color for its label. */
-  border: 1px solid var(--border); /* Draws a subtle outline around the action. */
+  color: var(--text);
+  border: 1px solid var(--border);
 }
 
-/* Removes the browser's default margin from the hero image figure. */
 .hero-media {
-  margin: 0; /* Aligns the figure with the hero grid. */
+  margin: 0;
 }
 
-/* Sizes and crops the featured home-page photograph. */
 .hero-media img {
-  width: 100%; /* Makes the image fill its grid column. */
-  aspect-ratio: 4 / 3; /* Keeps the image in a consistent landscape shape. */
-  object-fit: cover; /* Crops the image without stretching it. */
-  border-radius: 8px; /* Rounds the image corners. */
-  border: 1px solid var(--border); /* Adds a subtle outline around the image. */
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
 }
 
-/* Styles the short description below the hero image. */
 figcaption {
-  margin-top: 10px; /* Adds space between the image and caption. */
-  color: var(--muted); /* Uses the softer supporting-text color. */
-  font-size: 0.9rem; /* Makes the caption slightly smaller than body text. */
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-/* Adds consistent spacing and a divider to major page sections. */
 .section {
-  padding: 72px 0; /* Adds equal vertical space inside each section. */
-  border-top: 1px solid var(--border); /* Separates sections with the active border color. */
+  padding: 72px 0;
+  border-top: 1px solid var(--border);
 }
 
-/* Limits the width and spacing of a section's introductory heading group. */
 .section-header {
-  max-width: 720px; /* Keeps heading and introduction lines readable. */
-  margin-bottom: 32px; /* Separates the heading group from content below it. */
+  max-width: 720px;
+  margin-bottom: 32px;
 }
 
-/* Arranges repeated skill or feature cards in three equal columns. */
 .feature-grid {
-  display: grid; /* Uses grid for the repeated card layout. */
-  grid-template-columns: repeat(3, 1fr); /* Creates three columns with equal widths. */
-  gap: 18px; /* Adds consistent space between cards. */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
-/* Styles each skill or feature card on the Home and Career pages. */
 .feature-card {
-  min-height: 180px; /* Keeps cards in the same row visually balanced. */
-  padding: 24px; /* Adds space between card content and its edges. */
-  background-color: var(--surface); /* Uses the active theme's card surface color. */
-  border: 1px solid var(--border); /* Draws a subtle card outline. */
-  border-radius: 8px; /* Rounds the card corners. */
+  min-height: 180px;
+  padding: 24px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 
-/* Removes extra space below the final paragraph inside feature cards. */
 .feature-card p {
-  margin-bottom: 0; /* Keeps the card's bottom spacing controlled by its padding. */
+  margin-bottom: 0;
 }
 
-/* Splits selected home-page sections into heading and copy columns. */
 .split-section {
-  display: grid; /* Uses grid to create the two-column section. */
-  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr); /* Gives the copy column slightly more room. */
-  gap: 48px; /* Adds space between the two columns. */
-  align-items: start; /* Aligns both columns to the top. */
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  gap: 48px;
+  align-items: start;
 }
 
-/* Limits the width of descriptive copy in split sections. */
 .section-copy {
-  max-width: 620px; /* Prevents paragraph lines from becoming too long. */
+  max-width: 620px;
 }
 
-/* Styles inline calls to action such as Explore projects. */
 .text-link {
-  color: var(--gold); /* Uses the primary accent color. */
-  font-weight: 700; /* Makes the call to action bold. */
-  text-decoration: none; /* Removes the browser's default underline. */
-  border-bottom: 1px solid currentColor; /* Adds a custom underline that matches the text. */
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
 }
 
-/* Changes text links to the secondary accent when hovered. */
 .text-link:hover {
-  color: var(--teal); /* Signals that the link is interactive. */
+  color: var(--teal);
 }
 
-/* Sizes and spaces the introductory hero on inner pages. */
 .page-hero {
-  max-width: 820px; /* Keeps inner-page introductions readable. */
-  padding: 88px 0 56px; /* Adds space above and below the inner-page introduction. */
+  max-width: 820px;
+  padding: 88px 0 56px;
 }
 
-/* Uses a smaller responsive title size on inner pages and the About hero. */
 .page-hero h1,
 .about-copy h1 {
-  font-size: clamp(2.4rem, 6vw, 5rem); /* Scales long page titles without overpowering their containers. */
+  font-size: clamp(2.4rem, 6vw, 5rem);
 }
 
-/* Stacks the filter controls and project entries with consistent spacing. */
 .project-list {
-  display: grid; /* Uses grid to arrange the Projects page content vertically. */
-  gap: 18px; /* Adds space between filters and project entries. */
+  display: grid;
+  gap: 18px;
 }
 
-/* Arranges the project technology filter buttons in a wrapping row. */
 .project-filters {
-  display: flex; /* Places filter buttons next to one another. */
-  flex-wrap: wrap; /* Moves buttons to another line on narrow screens. */
-  gap: 8px; /* Adds space between filter buttons. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-/* Styles every technology filter button. */
 .project-filters button {
-  min-height: 44px; /* Provides an accessible touch target height. */
-  padding: 9px 14px; /* Adds clickable space around each label. */
-  color: var(--muted); /* Uses a quieter color for unselected filters. */
-  font: inherit; /* Matches the site's body font settings. */
-  font-weight: 700; /* Makes filter labels bold. */
-  background-color: transparent; /* Leaves unselected filters unfilled. */
-  border: 1px solid var(--border); /* Draws a subtle outline around each filter. */
-  border-radius: 8px; /* Rounds each filter button's corners. */
-  cursor: pointer; /* Shows that filters can be clicked. */
+  min-height: 44px;
+  padding: 9px 14px;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* Emphasizes filter buttons during mouse hover or keyboard focus. */
 .project-filters button:hover,
 .project-filters button:focus-visible {
-  color: var(--text); /* Strengthens the filter label color. */
-  border-color: var(--gold); /* Changes the filter outline to gold. */
+  color: var(--text);
+  border-color: var(--gold);
 }
 
-/* Shows which project filter JavaScript has selected. */
 .project-filters button[aria-pressed="true"] {
-  color: var(--background); /* Gives selected filter text strong contrast. */
-  background-color: var(--gold); /* Fills the selected filter with gold. */
-  border-color: var(--gold); /* Matches the selected outline to its fill. */
+  color: var(--background);
+  background-color: var(--gold);
+  border-color: var(--gold);
 }
 
-/* Styles each full project entry with a number column and content column. */
 .project-detail {
-  display: grid; /* Uses grid to separate the project number and content. */
-  grid-template-columns: 72px 1fr; /* Reserves 72px for the number and gives the rest to content. */
-  gap: 24px; /* Adds space between the number and project content. */
-  padding: 28px; /* Adds interior space around project information. */
-  background-color: var(--surface); /* Uses the active card surface color. */
-  border: 1px solid var(--border); /* Draws a subtle project outline. */
-  border-radius: 8px; /* Rounds the project entry corners. */
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 24px;
+  padding: 28px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 
-/* Removes projects that JavaScript excludes with the selected filter. */
 .project-detail[hidden] {
-  display: none; /* Takes filtered projects out of the layout. */
+  display: none;
 }
 
-/* Highlights project numbers and career timeline dates. */
 .project-number,
 .timeline-date {
-  color: var(--gold); /* Uses the primary accent color. */
-  font-weight: 700; /* Makes numbers and dates bold. */
+  color: var(--gold);
+  font-weight: 700;
 }
 
-/* Resets and arranges each project's technology tag list. */
 .tag-list {
-  list-style: none; /* Removes default bullet points. */
-  display: flex; /* Places tags in a row. */
-  flex-wrap: wrap; /* Allows tags to move onto additional lines. */
-  gap: 10px; /* Adds space between tags. */
-  margin: 20px 0 0; /* Separates tags from the project description. */
-  padding: 0; /* Removes default list indentation. */
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 0;
 }
 
-/* Styles each individual technology tag. */
 .tag-list li {
-  color: var(--text); /* Uses the active theme's main text color. */
-  padding: 6px 10px; /* Adds compact space around the tag label. */
-  background-color: var(--surface-light); /* Places tags on a lighter card surface. */
-  border: 1px solid var(--border); /* Adds a subtle outline around each tag. */
-  border-radius: 8px; /* Rounds each tag's corners. */
-  font-size: 0.9rem; /* Makes tags slightly smaller than body text. */
+  color: var(--text);
+  padding: 6px 10px;
+  background-color: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
 }
 
-/* Styles the Show details and Hide details command in each project. */
 .project-details-toggle {
-  display: inline-flex; /* Places the circular symbol and label in one row. */
-  align-items: center; /* Vertically centers the symbol and label. */
-  gap: 9px; /* Adds space between the symbol and label. */
-  margin-top: 22px; /* Separates the command from the technology tags. */
-  padding: 0; /* Removes default button padding. */
-  color: var(--gold); /* Uses the primary accent color. */
-  font: inherit; /* Matches the site's body font. */
-  font-weight: 700; /* Makes the command label bold. */
-  background-color: transparent; /* Removes the default button fill. */
-  border: 0; /* Removes the default button border. */
-  cursor: pointer; /* Shows that the command can be clicked. */
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  padding: 0;
+  color: var(--gold);
+  font: inherit;
+  font-weight: 700;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
 }
 
-/* Changes the details command color for mouse and keyboard users. */
 .project-details-toggle:hover,
 .project-details-toggle:focus-visible {
-  color: var(--teal); /* Uses the secondary accent during interaction. */
+  color: var(--teal);
 }
 
-/* Styles the circular plus symbol beside the project details label. */
 .details-toggle-symbol {
-  display: inline-flex; /* Enables flexbox centering inside the circle. */
-  align-items: center; /* Vertically centers the plus symbol. */
-  justify-content: center; /* Horizontally centers the plus symbol. */
-  width: 24px; /* Sets a stable symbol circle width. */
-  height: 24px; /* Sets a stable symbol circle height. */
-  color: var(--background); /* Gives the symbol contrast against its fill. */
-  background-color: var(--gold); /* Fills the symbol circle with gold. */
-  border-radius: 50%; /* Turns the square into a circle. */
-  font-size: 1.15rem; /* Makes the plus symbol easy to see. */
-  line-height: 1; /* Prevents text line spacing from moving the symbol. */
-  transition: transform 180ms ease, background-color 180ms ease; /* Smooths rotation and color changes. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--background);
+  background-color: var(--gold);
+  border-radius: 50%;
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 180ms ease, background-color 180ms ease;
 }
 
-/* Changes the circular details symbol during hover or keyboard focus. */
 .project-details-toggle:hover .details-toggle-symbol,
 .project-details-toggle:focus-visible .details-toggle-symbol {
-  background-color: var(--teal); /* Matches the symbol background to the teal label. */
+  background-color: var(--teal);
 }
 
-/* Rotates the plus into an X while a project's details are expanded. */
 .project-details-toggle[aria-expanded="true"] .details-toggle-symbol {
-  transform: rotate(45deg); /* Turns the plus symbol 45 degrees. */
+  transform: rotate(45deg);
 }
 
-/* Separates expanded project information from the main summary. */
 .project-extra {
-  margin-top: 20px; /* Adds space above the expanded information. */
-  padding-top: 20px; /* Adds space below its divider. */
-  border-top: 1px solid var(--border); /* Draws a divider above the extra details. */
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
 }
 
-/* Keeps extra project information removed until JavaScript reveals it. */
 .project-extra[hidden] {
-  display: none; /* Takes the collapsed details out of the layout. */
+  display: none;
 }
 
-/* Tightens spacing below headings in expanded project information. */
 .project-extra h3 {
-  margin-bottom: 8px; /* Separates the detail heading from its paragraph. */
+  margin-bottom: 8px;
 }
 
-/* Controls line length and bottom spacing in expanded project copy. */
 .project-extra p {
-  max-width: 780px; /* Keeps the extra information readable on wide screens. */
-  margin-bottom: 0; /* Removes unnecessary space at the bottom of the panel. */
+  max-width: 780px;
+  margin-bottom: 0;
 }
 
-/* Gives every scroll-reveal target no delay unless a delay is requested. */
 .reveal-item {
-  --reveal-delay: 0ms; /* Stores the default animation delay. */
+  --reveal-delay: 0ms;
 }
 
-/* Delays the second item in a grouped reveal sequence. */
 .reveal-item[data-reveal-delay="1"] {
-  --reveal-delay: 90ms; /* Waits briefly before starting the second reveal. */
+  --reveal-delay: 90ms;
 }
 
-/* Delays the third item in a grouped reveal sequence. */
 .reveal-item[data-reveal-delay="2"] {
-  --reveal-delay: 180ms; /* Waits longer before starting the third reveal. */
+  --reveal-delay: 180ms;
 }
 
-/* Sets the starting position that JavaScript applies before an item enters view. */
 .reveal-item.is-reveal-ready {
-  opacity: 0; /* Makes the waiting item transparent. */
-  transform: translateY(22px); /* Moves the waiting item slightly downward. */
-  transition: /* Animates opacity and position using the item's stored delay. */
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
     opacity 520ms ease var(--reveal-delay),
     transform 520ms ease var(--reveal-delay);
 }
 
-/* Sets the ending position after JavaScript marks a reveal item visible. */
 .reveal-item.is-reveal-ready.is-visible {
-  opacity: 1; /* Makes the revealed item fully visible. */
-  transform: translateY(0); /* Returns the item to its normal position. */
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Stacks the Career page timeline entries with equal spacing. */
 .timeline {
-  display: grid; /* Uses grid to arrange timeline entries vertically. */
-  gap: 22px; /* Adds space between career entries. */
+  display: grid;
+  gap: 22px;
 }
 
-/* Marks each career entry with a gold line on its left side. */
 .timeline-item {
-  padding-left: 24px; /* Separates the entry text from the timeline line. */
-  border-left: 3px solid var(--gold); /* Draws the timeline's vertical gold marker. */
+  padding-left: 24px;
+  border-left: 3px solid var(--gold);
 }
 
-/* Removes extra space below the final paragraph in a career entry. */
 .timeline-item p:last-child {
-  margin-bottom: 0; /* Keeps the bottom of each entry compact. */
+  margin-bottom: 0;
 }
 
-/* Emphasizes job titles shown inside career entries. */
 .role {
-  color: var(--text); /* Uses the active theme's strongest text color. */
-  font-weight: 700; /* Makes each job title bold. */
+  color: var(--text);
+  font-weight: 700;
 }
 
-/* Sets a readable width and generous spacing for the About page introduction. */
 .about-hero {
-  max-width: 850px; /* Stops the About introduction from becoming too wide. */
-  padding: 88px 0 72px; /* Adds vertical space around the introduction. */
+  max-width: 850px;
+  padding: 88px 0 72px;
 }
 
-/* Limits the width of the longer personal story section. */
 .story-section {
-  max-width: 850px; /* Keeps story paragraphs at a comfortable reading length. */
+  max-width: 850px;
 }
 
-/* Makes personal story paragraphs slightly larger than standard body copy. */
 .story-section p {
-  font-size: 1.05rem; /* Adds a small readability boost to the story text. */
+  font-size: 1.05rem;
 }
 
-/* Arranges the copyright and footer links across the bottom of every page. */
 .site-footer {
-  max-width: 1120px; /* Matches the footer width to the main page content. */
-  margin: 0 auto; /* Centers the footer in the browser window. */
-  padding: 28px 24px 40px; /* Adds breathing room inside the footer. */
-  display: flex; /* Places copyright text and links in one row. */
-  justify-content: space-between; /* Pushes footer content toward opposite sides. */
-  gap: 24px; /* Preserves space if footer items move closer together. */
-  border-top: 1px solid var(--border); /* Draws a divider above the footer. */
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--border);
 }
 
-/* Removes the default bottom gap from the footer's copyright paragraph. */
 .site-footer p {
-  margin-bottom: 0; /* Keeps footer text aligned without extra space underneath. */
+  margin-bottom: 0;
 }
 
-/* Places footer navigation links next to one another. */
 .footer-links {
-  display: flex; /* Creates a horizontal row of footer links. */
-  gap: 16px; /* Adds space between footer links. */
+  display: flex;
+  gap: 16px;
 }
 
-/* Styles links inside the footer navigation. */
 .footer-links a {
-  color: var(--muted); /* Uses a quieter color for secondary footer links. */
-  text-decoration: none; /* Removes the browser's default underline. */
-  font-weight: 700; /* Makes footer link labels bold. */
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
 }
 
-/* Highlights a footer link while the pointer is over it. */
 .footer-links a:hover {
-  color: var(--gold); /* Changes the hovered link to the primary accent. */
+  color: var(--gold);
 }
 
-/* Positions and styles the button that returns visitors to the page top. */
 .back-to-top {
-  position: fixed; /* Keeps the button attached to the browser window while scrolling. */
-  right: max(20px, calc((100vw - 1120px) / 2)); /* Aligns the button with wide content while keeping a safe edge gap. */
-  bottom: 24px; /* Places the button above the bottom of the window. */
-  z-index: 9; /* Keeps the button above ordinary page content. */
-  display: inline-flex; /* Enables precise centering of the arrow symbol. */
-  align-items: center; /* Vertically centers the arrow. */
-  justify-content: center; /* Horizontally centers the arrow. */
-  width: 48px; /* Sets a stable and accessible button width. */
-  height: 48px; /* Sets a stable and accessible button height. */
-  padding: 0; /* Prevents default padding from changing the button size. */
-  color: var(--background); /* Contrasts the arrow with the gold background. */
-  background-color: var(--gold); /* Uses the primary accent for the button fill. */
-  border: 1px solid var(--gold); /* Matches the button outline to its fill. */
-  border-radius: 8px; /* Rounds the button corners. */
-  opacity: 0; /* Makes the button transparent before JavaScript reveals it. */
-  visibility: hidden; /* Removes the hidden button from keyboard interaction. */
-  transform: translateY(12px); /* Starts the hidden button slightly lower. */
-  pointer-events: none; /* Prevents clicks while the button is hidden. */
-  cursor: pointer; /* Shows that the visible button can be clicked. */
-  transition: /* Smooths the button's entrance, exit, and hover colors. */
+  position: fixed;
+  right: max(20px, calc((100vw - 1120px) / 2));
+  bottom: 24px;
+  z-index: 9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  color: var(--background);
+  background-color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  pointer-events: none;
+  cursor: pointer;
+  transition:
     opacity 180ms ease,
     transform 180ms ease,
     background-color 180ms ease,
     border-color 180ms ease;
 }
 
-/* Reveals the back-to-top button after JavaScript detects enough scrolling. */
 .back-to-top.is-visible {
-  opacity: 1; /* Makes the button fully visible. */
-  visibility: visible; /* Returns the button to keyboard interaction. */
-  transform: translateY(0); /* Moves the button into its final position. */
-  pointer-events: auto; /* Allows visitors to click the visible button. */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-/* Changes the back-to-top button during mouse hover or keyboard focus. */
 .back-to-top:hover,
 .back-to-top:focus-visible {
-  background-color: var(--teal); /* Uses the secondary accent for interaction feedback. */
-  border-color: var(--teal); /* Keeps the interactive outline matched to the fill. */
+  background-color: var(--teal);
+  border-color: var(--teal);
 }
 
-/* Sizes the upward arrow inside the back-to-top button. */
 .back-to-top span {
-  font-size: 1.5rem; /* Makes the arrow easy to recognize. */
-  line-height: 1; /* Prevents line spacing from moving the arrow off center. */
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
-/* Changes the layout when the browser is 760px wide or narrower. */
 @media (max-width: 760px) {
-  /* Stacks the navigation container and footer content on small screens. */
   .nav-container,
   .site-footer {
-    align-items: flex-start; /* Aligns stacked items to the left edge. */
-    flex-direction: column; /* Changes each flex row into a vertical stack. */
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  /* Keeps the logo and header controls in a wrapping mobile row. */
   .nav-container {
-    align-items: center; /* Vertically aligns the logo and buttons. */
-    flex-flow: row wrap; /* Allows the navigation links to wrap below the controls. */
+    align-items: center;
+    flex-flow: row wrap;
   }
 
-  /* Displays and styles the Menu button used on small screens. */
   .nav-toggle {
-    display: inline-flex; /* Makes the normally hidden Menu button visible. */
-    align-items: center; /* Vertically centers the Menu label. */
-    justify-content: center; /* Horizontally centers the Menu label. */
-    min-width: 72px; /* Keeps the button wide enough for Menu and Close. */
-    min-height: 44px; /* Provides an accessible touch target height. */
-    margin-left: 0; /* Removes desktop spacing from the button's left side. */
-    padding: 8px 12px; /* Adds clickable space around the label. */
-    color: var(--text); /* Uses the active theme's main text color. */
-    font: inherit; /* Matches the rest of the site's font settings. */
-    font-weight: 700; /* Makes the Menu label bold. */
-    background-color: transparent; /* Keeps the button background unfilled. */
-    border: 1px solid var(--border); /* Draws a subtle outline around the button. */
-    border-radius: 8px; /* Rounds the button corners. */
-    cursor: pointer; /* Shows that the Menu button can be clicked. */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    min-height: 44px;
+    margin-left: 0;
+    padding: 8px 12px;
+    color: var(--text);
+    font: inherit;
+    font-weight: 700;
+    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
   }
 
-  /* Highlights the mobile Menu button during mouse or keyboard interaction. */
   .nav-toggle:hover,
   .nav-toggle:focus-visible {
-    color: var(--gold); /* Changes the label to the primary accent. */
-    border-color: var(--gold); /* Changes the outline to the primary accent. */
+    color: var(--gold);
+    border-color: var(--gold);
   }
 
-  /* Hides and prepares the navigation links as a full-width mobile list. */
   .primary-nav {
-    display: none; /* Keeps links hidden until JavaScript opens the menu. */
-    flex-direction: column; /* Stacks navigation links vertically. */
-    flex-basis: 100%; /* Forces the link list onto its own row. */
-    width: 100%; /* Lets each navigation link use the full header width. */
-    gap: 4px; /* Adds a small gap between navigation links. */
-    order: 4; /* Places the link list below all header controls. */
-    margin-left: 0; /* Removes the desktop navigation offset. */
+    display: none;
+    flex-direction: column;
+    flex-basis: 100%;
+    width: 100%;
+    gap: 4px;
+    order: 4;
+    margin-left: 0;
   }
 
-  /* Places the logo first in the mobile header. */
   .logo {
-    order: 1; /* Keeps the site identity at the start of the header row. */
+    order: 1;
   }
 
-  /* Places the theme control between the logo and Menu button. */
   .theme-toggle {
-    order: 2; /* Positions the theme control second in the header row. */
-    margin-left: auto; /* Pushes both header buttons toward the right. */
+    order: 2;
+    margin-left: auto;
   }
 
-  /* Places the Menu button after the theme control. */
   .nav-toggle {
-    order: 3; /* Positions the Menu button third in the header row. */
+    order: 3;
   }
 
-  /* Shows the mobile navigation after JavaScript adds its open class. */
   .primary-nav.is-open {
-    display: flex; /* Reveals the prepared vertical navigation list. */
+    display: flex;
   }
 
-  /* Makes each mobile navigation link fill the available row. */
   .primary-nav a {
-    width: 100%; /* Creates large, consistent link targets. */
+    width: 100%;
   }
 
-  /* Changes multi-column page sections into one-column layouts. */
   .hero,
   .split-section,
   .project-detail {
-    grid-template-columns: 1fr; /* Places each section's content in one vertical column. */
+    grid-template-columns: 1fr;
   }
 
-  /* Reduces Home hero spacing and removes its desktop height requirement. */
   .hero {
-    min-height: auto; /* Lets hero height follow its content on small screens. */
-    padding: 56px 0; /* Uses more compact vertical hero spacing. */
+    min-height: auto;
+    padding: 56px 0;
   }
 
-  /* Stacks the home-page feature cards on small screens. */
   .feature-grid {
-    grid-template-columns: 1fr; /* Gives every feature card its own row. */
+    grid-template-columns: 1fr;
   }
 
-  /* Tightens spacing between a project number and its content. */
   .project-detail {
-    gap: 8px; /* Reduces the gap in the new one-column project layout. */
+    gap: 8px;
   }
 
-  /* Keeps the back-to-top button close to mobile screen edges. */
   .back-to-top {
-    right: 16px; /* Positions the button 16px from the right edge. */
-    bottom: 16px; /* Positions the button 16px from the bottom edge. */
+    right: 16px;
+    bottom: 16px;
   }
 }
 
-/* Honors visitors who ask their device to reduce animation. */
 @media (prefers-reduced-motion: reduce) {
-  /* Removes transitions from major animated interface elements. */
   body,
   .site-header,
   .theme-toggle,
   .details-toggle-symbol,
   .back-to-top {
-    transition: none; /* Stops decorative transitions for motion-sensitive visitors. */
+    transition: none;
   }
 
-  /* Shows reveal items immediately instead of animating them into view. */
   .reveal-item.is-reveal-ready,
   .reveal-item.is-reveal-ready.is-visible {
-    opacity: 1; /* Keeps every reveal item fully visible. */
-    transform: none; /* Leaves reveal items in their normal position. */
-    transition: none; /* Removes the scroll-reveal animation. */
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

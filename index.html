@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Defines the page text encoding and makes the layout responsive on mobile devices. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Names the page in the browser tab. -->
     <title>Sam Batra | Portfolio</title>
-    <!-- Loads the shared visual styles and JavaScript used across the portfolio. -->
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- Provides the site identity, page links, mobile menu, and theme control. -->
     <header class="site-header">
         <nav class="nav-container" aria-label="Main navigation">
-            <!-- Returns visitors to the Home page when the name is selected. -->
             <a class="logo" href="index.html">Sam Batra</a>
 
-            <!-- Opens and closes the navigation links on narrow screens. -->
             <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
                 Menu
             </button>
 
-            <!-- Links to every main page and marks Home as the current page. -->
             <div class="primary-nav" id="primary-navigation">
                 <a class="active" href="index.html" aria-current="page">Home</a>
                 <a href="projects/index.html">Projects</a>
@@ -31,18 +24,14 @@
                 <a href="about/index.html">About</a>
             </div>
 
-            <!-- Switches between the dark and light color themes. -->
             <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Switch to light theme">
                 <span class="theme-icon" aria-hidden="true">&#9788;</span>
             </button>
         </nav>
     </header>
 
-    <!-- Contains the unique content of the Home page. -->
     <main>
-        <!-- Introduces Sam, summarizes his focus, and provides primary page links. -->
         <section class="hero">
-            <!-- Holds the Home page headline, summary, and action links. -->
             <div class="hero-content">
                 <p class="eyebrow">Portfolio</p>
                 <h1>Sam Batra</h1>
@@ -53,43 +42,35 @@
                     troubleshooting, and secure systems.
                 </p>
 
-                <!-- Gives visitors direct links to the Projects and Career pages. -->
                 <div class="hero-actions">
                     <a class="button primary-button" href="projects/index.html">View Projects</a>
                     <a class="button secondary-button" href="career/index.html">View Career</a>
                 </div>
             </div>
 
-            <!-- Shows a professional event photo with its descriptive caption. -->
             <figure class="hero-media">
                 <img src="images/sam_batra_lisug_horizons1.webp" alt="Sam Batra at a Long Island Systems User Group event">
                 <figcaption>Building technical experience through community-focused web work.</figcaption>
             </figure>
         </section>
 
-        <!-- Summarizes the three strengths Sam brings to technology work. -->
         <section class="section">
-            <!-- Labels and titles the strengths section. -->
             <div class="section-header reveal-item">
                 <p class="eyebrow">Focus</p>
                 <h2>What I Bring</h2>
             </div>
 
-            <!-- Groups the three strength summaries into a responsive grid. -->
             <div class="feature-grid">
-                <!-- Describes Sam's technical support strengths. -->
                 <article class="feature-card reveal-item">
                     <h3>Technical Support</h3>
                     <p>Clear troubleshooting, documentation, escalation, and user-focused problem solving.</p>
                 </article>
 
-                <!-- Describes Sam's web development experience. -->
                 <article class="feature-card reveal-item" data-reveal-delay="1">
                     <h3>Web Development</h3>
                     <p>Hands-on work with HTML, CSS, JavaScript, React, Next.js, APIs, MongoDB, and AWS S3.</p>
                 </article>
 
-                <!-- Describes Sam's security-focused experience. -->
                 <article class="feature-card reveal-item" data-reveal-delay="2">
                     <h3>Security Mindset</h3>
                     <p>Experience with access control, incident response, accountability, and high-pressure decisions.</p>
@@ -97,7 +78,6 @@
             </div>
         </section>
 
-        <!-- Introduces Sam's featured work and links to the Projects page. -->
         <section class="section split-section reveal-item">
             <div>
                 <p class="eyebrow">Featured Work</p>
@@ -113,7 +93,6 @@
             </div>
         </section>
 
-        <!-- Connects Sam's service, education, and software background to his story. -->
         <section class="section split-section reveal-item">
             <div>
                 <p class="eyebrow">Background</p>
@@ -130,7 +109,6 @@
         </section>
     </main>
 
-    <!-- Shows copyright information and external contact links on every page. -->
     <footer class="site-footer">
         <p>&copy; <time class="current-year" datetime="2026">2026</time> Sam Batra. Built with HTML, CSS, and JavaScript.</p>
         <div class="footer-links">
@@ -139,7 +117,6 @@
         </div>
     </footer>
 
-    <!-- Returns visitors to the top after they have scrolled down the page. -->
     <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>
         <span aria-hidden="true">&#8593;</span>
     </button>
