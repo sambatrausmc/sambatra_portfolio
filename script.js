@@ -135,3 +135,26 @@ if (revealItems.length > 0 && "IntersectionObserver" in window && !prefersReduce
     revealObserver.observe(item);
   });
 }
+
+const backToTopButton = document.querySelector(".back-to-top");
+
+if (backToTopButton) {
+  const updateBackToTopButton = () => {
+    const shouldShowButton = window.scrollY > 480;
+    backToTopButton.classList.toggle("is-visible", shouldShowButton);
+  };
+
+  backToTopButton.hidden = false;
+  updateBackToTopButton();
+
+  window.addEventListener("scroll", updateBackToTopButton, { passive: true });
+
+  backToTopButton.addEventListener("click", () => {
+    const scrollBehavior = prefersReducedMotion ? "auto" : "smooth";
+
+    window.scrollTo({
+      top: 0,
+      behavior: scrollBehavior,
+    });
+  });
+}
