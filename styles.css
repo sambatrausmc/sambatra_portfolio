@@ -336,163 +336,187 @@ figcaption {
   font-size: clamp(2.4rem, 6vw, 5rem); /* Scales long page titles without overpowering their containers. */
 }
 
+/* Stacks the filter controls and project entries with consistent spacing. */
 .project-list {
-  display: grid;
-  gap: 18px;
+  display: grid; /* Uses grid to arrange the Projects page content vertically. */
+  gap: 18px; /* Adds space between filters and project entries. */
 }
 
+/* Arranges the project technology filter buttons in a wrapping row. */
 .project-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: flex; /* Places filter buttons next to one another. */
+  flex-wrap: wrap; /* Moves buttons to another line on narrow screens. */
+  gap: 8px; /* Adds space between filter buttons. */
 }
 
+/* Styles every technology filter button. */
 .project-filters button {
-  min-height: 44px;
-  padding: 9px 14px;
-  color: var(--muted);
-  font: inherit;
-  font-weight: 700;
-  background-color: transparent;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
+  min-height: 44px; /* Provides an accessible touch target height. */
+  padding: 9px 14px; /* Adds clickable space around each label. */
+  color: var(--muted); /* Uses a quieter color for unselected filters. */
+  font: inherit; /* Matches the site's body font settings. */
+  font-weight: 700; /* Makes filter labels bold. */
+  background-color: transparent; /* Leaves unselected filters unfilled. */
+  border: 1px solid var(--border); /* Draws a subtle outline around each filter. */
+  border-radius: 8px; /* Rounds each filter button's corners. */
+  cursor: pointer; /* Shows that filters can be clicked. */
 }
 
+/* Emphasizes filter buttons during mouse hover or keyboard focus. */
 .project-filters button:hover,
 .project-filters button:focus-visible {
-  color: var(--text);
-  border-color: var(--gold);
+  color: var(--text); /* Strengthens the filter label color. */
+  border-color: var(--gold); /* Changes the filter outline to gold. */
 }
 
+/* Shows which project filter JavaScript has selected. */
 .project-filters button[aria-pressed="true"] {
-  color: var(--background);
-  background-color: var(--gold);
-  border-color: var(--gold);
+  color: var(--background); /* Gives selected filter text strong contrast. */
+  background-color: var(--gold); /* Fills the selected filter with gold. */
+  border-color: var(--gold); /* Matches the selected outline to its fill. */
 }
 
+/* Styles each full project entry with a number column and content column. */
 .project-detail {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 24px;
-  padding: 28px;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  display: grid; /* Uses grid to separate the project number and content. */
+  grid-template-columns: 72px 1fr; /* Reserves 72px for the number and gives the rest to content. */
+  gap: 24px; /* Adds space between the number and project content. */
+  padding: 28px; /* Adds interior space around project information. */
+  background-color: var(--surface); /* Uses the active card surface color. */
+  border: 1px solid var(--border); /* Draws a subtle project outline. */
+  border-radius: 8px; /* Rounds the project entry corners. */
 }
 
+/* Removes projects that JavaScript excludes with the selected filter. */
 .project-detail[hidden] {
-  display: none;
+  display: none; /* Takes filtered projects out of the layout. */
 }
 
+/* Highlights project numbers and career timeline dates. */
 .project-number,
 .timeline-date {
-  color: var(--gold);
-  font-weight: 700;
+  color: var(--gold); /* Uses the primary accent color. */
+  font-weight: 700; /* Makes numbers and dates bold. */
 }
 
+/* Resets and arranges each project's technology tag list. */
 .tag-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0 0;
-  padding: 0;
+  list-style: none; /* Removes default bullet points. */
+  display: flex; /* Places tags in a row. */
+  flex-wrap: wrap; /* Allows tags to move onto additional lines. */
+  gap: 10px; /* Adds space between tags. */
+  margin: 20px 0 0; /* Separates tags from the project description. */
+  padding: 0; /* Removes default list indentation. */
 }
 
+/* Styles each individual technology tag. */
 .tag-list li {
-  color: var(--text);
-  padding: 6px 10px;
-  background-color: var(--surface-light);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 0.9rem;
+  color: var(--text); /* Uses the active theme's main text color. */
+  padding: 6px 10px; /* Adds compact space around the tag label. */
+  background-color: var(--surface-light); /* Places tags on a lighter card surface. */
+  border: 1px solid var(--border); /* Adds a subtle outline around each tag. */
+  border-radius: 8px; /* Rounds each tag's corners. */
+  font-size: 0.9rem; /* Makes tags slightly smaller than body text. */
 }
 
+/* Styles the Show details and Hide details command in each project. */
 .project-details-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 22px;
-  padding: 0;
-  color: var(--gold);
-  font: inherit;
-  font-weight: 700;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
+  display: inline-flex; /* Places the circular symbol and label in one row. */
+  align-items: center; /* Vertically centers the symbol and label. */
+  gap: 9px; /* Adds space between the symbol and label. */
+  margin-top: 22px; /* Separates the command from the technology tags. */
+  padding: 0; /* Removes default button padding. */
+  color: var(--gold); /* Uses the primary accent color. */
+  font: inherit; /* Matches the site's body font. */
+  font-weight: 700; /* Makes the command label bold. */
+  background-color: transparent; /* Removes the default button fill. */
+  border: 0; /* Removes the default button border. */
+  cursor: pointer; /* Shows that the command can be clicked. */
 }
 
+/* Changes the details command color for mouse and keyboard users. */
 .project-details-toggle:hover,
 .project-details-toggle:focus-visible {
-  color: var(--teal);
+  color: var(--teal); /* Uses the secondary accent during interaction. */
 }
 
+/* Styles the circular plus symbol beside the project details label. */
 .details-toggle-symbol {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: var(--background);
-  background-color: var(--gold);
-  border-radius: 50%;
-  font-size: 1.15rem;
-  line-height: 1;
-  transition: transform 180ms ease, background-color 180ms ease;
+  display: inline-flex; /* Enables flexbox centering inside the circle. */
+  align-items: center; /* Vertically centers the plus symbol. */
+  justify-content: center; /* Horizontally centers the plus symbol. */
+  width: 24px; /* Sets a stable symbol circle width. */
+  height: 24px; /* Sets a stable symbol circle height. */
+  color: var(--background); /* Gives the symbol contrast against its fill. */
+  background-color: var(--gold); /* Fills the symbol circle with gold. */
+  border-radius: 50%; /* Turns the square into a circle. */
+  font-size: 1.15rem; /* Makes the plus symbol easy to see. */
+  line-height: 1; /* Prevents text line spacing from moving the symbol. */
+  transition: transform 180ms ease, background-color 180ms ease; /* Smooths rotation and color changes. */
 }
 
+/* Changes the circular details symbol during hover or keyboard focus. */
 .project-details-toggle:hover .details-toggle-symbol,
 .project-details-toggle:focus-visible .details-toggle-symbol {
-  background-color: var(--teal);
+  background-color: var(--teal); /* Matches the symbol background to the teal label. */
 }
 
+/* Rotates the plus into an X while a project's details are expanded. */
 .project-details-toggle[aria-expanded="true"] .details-toggle-symbol {
-  transform: rotate(45deg);
+  transform: rotate(45deg); /* Turns the plus symbol 45 degrees. */
 }
 
+/* Separates expanded project information from the main summary. */
 .project-extra {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
+  margin-top: 20px; /* Adds space above the expanded information. */
+  padding-top: 20px; /* Adds space below its divider. */
+  border-top: 1px solid var(--border); /* Draws a divider above the extra details. */
 }
 
+/* Keeps extra project information removed until JavaScript reveals it. */
 .project-extra[hidden] {
-  display: none;
+  display: none; /* Takes the collapsed details out of the layout. */
 }
 
+/* Tightens spacing below headings in expanded project information. */
 .project-extra h3 {
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* Separates the detail heading from its paragraph. */
 }
 
+/* Controls line length and bottom spacing in expanded project copy. */
 .project-extra p {
-  max-width: 780px;
-  margin-bottom: 0;
+  max-width: 780px; /* Keeps the extra information readable on wide screens. */
+  margin-bottom: 0; /* Removes unnecessary space at the bottom of the panel. */
 }
 
+/* Gives every scroll-reveal target no delay unless a delay is requested. */
 .reveal-item {
-  --reveal-delay: 0ms;
+  --reveal-delay: 0ms; /* Stores the default animation delay. */
 }
 
+/* Delays the second item in a grouped reveal sequence. */
 .reveal-item[data-reveal-delay="1"] {
-  --reveal-delay: 90ms;
+  --reveal-delay: 90ms; /* Waits briefly before starting the second reveal. */
 }
 
+/* Delays the third item in a grouped reveal sequence. */
 .reveal-item[data-reveal-delay="2"] {
-  --reveal-delay: 180ms;
+  --reveal-delay: 180ms; /* Waits longer before starting the third reveal. */
 }
 
+/* Sets the starting position that JavaScript applies before an item enters view. */
 .reveal-item.is-reveal-ready {
-  opacity: 0;
-  transform: translateY(22px);
-  transition:
+  opacity: 0; /* Makes the waiting item transparent. */
+  transform: translateY(22px); /* Moves the waiting item slightly downward. */
+  transition: /* Animates opacity and position using the item's stored delay. */
     opacity 520ms ease var(--reveal-delay),
     transform 520ms ease var(--reveal-delay);
 }
 
+/* Sets the ending position after JavaScript marks a reveal item visible. */
 .reveal-item.is-reveal-ready.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1; /* Makes the revealed item fully visible. */
+  transform: translateY(0); /* Returns the item to its normal position. */
 }
 
 .timeline {
