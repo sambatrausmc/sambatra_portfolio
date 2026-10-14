@@ -158,3 +158,11 @@ if (backToTopButton) {
     });
   });
 }
+
+const currentYearElements = document.querySelectorAll(".current-year");
+const currentYear = String(new Date().getFullYear());
+
+currentYearElements.forEach((yearElement) => {
+  yearElement.textContent = currentYear;
+  yearElement.setAttribute("datetime", currentYear);
+});
