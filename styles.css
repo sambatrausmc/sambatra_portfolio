@@ -519,110 +519,126 @@ figcaption {
   transform: translateY(0); /* Returns the item to its normal position. */
 }
 
+/* Stacks the Career page timeline entries with equal spacing. */
 .timeline {
-  display: grid;
-  gap: 22px;
+  display: grid; /* Uses grid to arrange timeline entries vertically. */
+  gap: 22px; /* Adds space between career entries. */
 }
 
+/* Marks each career entry with a gold line on its left side. */
 .timeline-item {
-  padding-left: 24px;
-  border-left: 3px solid var(--gold);
+  padding-left: 24px; /* Separates the entry text from the timeline line. */
+  border-left: 3px solid var(--gold); /* Draws the timeline's vertical gold marker. */
 }
 
+/* Removes extra space below the final paragraph in a career entry. */
 .timeline-item p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Keeps the bottom of each entry compact. */
 }
 
+/* Emphasizes job titles shown inside career entries. */
 .role {
-  color: var(--text);
-  font-weight: 700;
+  color: var(--text); /* Uses the active theme's strongest text color. */
+  font-weight: 700; /* Makes each job title bold. */
 }
 
+/* Sets a readable width and generous spacing for the About page introduction. */
 .about-hero {
-  max-width: 850px;
-  padding: 88px 0 72px;
+  max-width: 850px; /* Stops the About introduction from becoming too wide. */
+  padding: 88px 0 72px; /* Adds vertical space around the introduction. */
 }
 
+/* Limits the width of the longer personal story section. */
 .story-section {
-  max-width: 850px;
+  max-width: 850px; /* Keeps story paragraphs at a comfortable reading length. */
 }
 
+/* Makes personal story paragraphs slightly larger than standard body copy. */
 .story-section p {
-  font-size: 1.05rem;
+  font-size: 1.05rem; /* Adds a small readability boost to the story text. */
 }
 
+/* Arranges the copyright and footer links across the bottom of every page. */
 .site-footer {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 28px 24px 40px;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  border-top: 1px solid var(--border);
+  max-width: 1120px; /* Matches the footer width to the main page content. */
+  margin: 0 auto; /* Centers the footer in the browser window. */
+  padding: 28px 24px 40px; /* Adds breathing room inside the footer. */
+  display: flex; /* Places copyright text and links in one row. */
+  justify-content: space-between; /* Pushes footer content toward opposite sides. */
+  gap: 24px; /* Preserves space if footer items move closer together. */
+  border-top: 1px solid var(--border); /* Draws a divider above the footer. */
 }
 
+/* Removes the default bottom gap from the footer's copyright paragraph. */
 .site-footer p {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Keeps footer text aligned without extra space underneath. */
 }
 
+/* Places footer navigation links next to one another. */
 .footer-links {
-  display: flex;
-  gap: 16px;
+  display: flex; /* Creates a horizontal row of footer links. */
+  gap: 16px; /* Adds space between footer links. */
 }
 
+/* Styles links inside the footer navigation. */
 .footer-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 700;
+  color: var(--muted); /* Uses a quieter color for secondary footer links. */
+  text-decoration: none; /* Removes the browser's default underline. */
+  font-weight: 700; /* Makes footer link labels bold. */
 }
 
+/* Highlights a footer link while the pointer is over it. */
 .footer-links a:hover {
-  color: var(--gold);
+  color: var(--gold); /* Changes the hovered link to the primary accent. */
 }
 
+/* Positions and styles the button that returns visitors to the page top. */
 .back-to-top {
-  position: fixed;
-  right: max(20px, calc((100vw - 1120px) / 2));
-  bottom: 24px;
-  z-index: 9;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  color: var(--background);
-  background-color: var(--gold);
-  border: 1px solid var(--gold);
-  border-radius: 8px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px);
-  pointer-events: none;
-  cursor: pointer;
-  transition:
+  position: fixed; /* Keeps the button attached to the browser window while scrolling. */
+  right: max(20px, calc((100vw - 1120px) / 2)); /* Aligns the button with wide content while keeping a safe edge gap. */
+  bottom: 24px; /* Places the button above the bottom of the window. */
+  z-index: 9; /* Keeps the button above ordinary page content. */
+  display: inline-flex; /* Enables precise centering of the arrow symbol. */
+  align-items: center; /* Vertically centers the arrow. */
+  justify-content: center; /* Horizontally centers the arrow. */
+  width: 48px; /* Sets a stable and accessible button width. */
+  height: 48px; /* Sets a stable and accessible button height. */
+  padding: 0; /* Prevents default padding from changing the button size. */
+  color: var(--background); /* Contrasts the arrow with the gold background. */
+  background-color: var(--gold); /* Uses the primary accent for the button fill. */
+  border: 1px solid var(--gold); /* Matches the button outline to its fill. */
+  border-radius: 8px; /* Rounds the button corners. */
+  opacity: 0; /* Makes the button transparent before JavaScript reveals it. */
+  visibility: hidden; /* Removes the hidden button from keyboard interaction. */
+  transform: translateY(12px); /* Starts the hidden button slightly lower. */
+  pointer-events: none; /* Prevents clicks while the button is hidden. */
+  cursor: pointer; /* Shows that the visible button can be clicked. */
+  transition: /* Smooths the button's entrance, exit, and hover colors. */
     opacity 180ms ease,
     transform 180ms ease,
     background-color 180ms ease,
     border-color 180ms ease;
 }
 
+/* Reveals the back-to-top button after JavaScript detects enough scrolling. */
 .back-to-top.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
+  opacity: 1; /* Makes the button fully visible. */
+  visibility: visible; /* Returns the button to keyboard interaction. */
+  transform: translateY(0); /* Moves the button into its final position. */
+  pointer-events: auto; /* Allows visitors to click the visible button. */
 }
 
+/* Changes the back-to-top button during mouse hover or keyboard focus. */
 .back-to-top:hover,
 .back-to-top:focus-visible {
-  background-color: var(--teal);
-  border-color: var(--teal);
+  background-color: var(--teal); /* Uses the secondary accent for interaction feedback. */
+  border-color: var(--teal); /* Keeps the interactive outline matched to the fill. */
 }
 
+/* Sizes the upward arrow inside the back-to-top button. */
 .back-to-top span {
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 1.5rem; /* Makes the arrow easy to recognize. */
+  line-height: 1; /* Prevents line spacing from moving the arrow off center. */
 }
 
 @media (max-width: 760px) {
