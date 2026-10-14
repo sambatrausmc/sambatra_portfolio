@@ -89,3 +89,21 @@ if (projectFilters && projectCards.length > 0) {
     });
   });
 }
+
+const projectDetailButtons = document.querySelectorAll(".project-details-toggle");
+
+projectDetailButtons.forEach((button) => {
+  const detailsId = button.getAttribute("aria-controls");
+  const detailsPanel = document.getElementById(detailsId);
+  const buttonLabel = button.querySelector(".details-toggle-label");
+
+  if (detailsPanel && buttonLabel) {
+    button.addEventListener("click", () => {
+      const willOpen = button.getAttribute("aria-expanded") === "false";
+
+      button.setAttribute("aria-expanded", String(willOpen));
+      detailsPanel.hidden = !willOpen;
+      buttonLabel.textContent = willOpen ? "Hide details" : "Show details";
+    });
+  }
+});
